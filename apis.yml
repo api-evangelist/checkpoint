@@ -1,33 +1,43 @@
 aid: checkpoint
-name: Checkpoint
-description: >-
-  Learn what API discovery is, and how mapping out an organizations API
-  footprint helps it defend against data breaches and other potential
-  cyberattacks.
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2025-01-08'
-modified: '2025-01-08'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/checkpoint/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
   - aid: checkpoint:checkpoint
     name: Checkpoint
+    tags:
+      - API
+    humanURL: https://www.checkpoint.com
+    properties:
+      - url: https://www.checkpoint.com
+        type: Documentation
     description: >-
       Learn what API discovery is, and how mapping out an organizations API
       footprint helps it defend against data breaches and other potential
       cyberattacks.
-    humanURL: https://www.checkpoint.com
-    tags:
-      - API
-    properties:
-      - type: Documentation
-        url: https://www.checkpoint.com
+name: Checkpoint
+tags:
+  - Security
+  - Cybersecurity
+  - Network Security
+  - Cloud Security
+  - Endpoint Security
+  - Mobile Security
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2025-01-08'
+modified: '2025-02-13'
+position: Consumer
+description: >-
+  Checkpoint is a cybersecurity company that provides solutions to protect
+  organizations from cyber threats. They offer a range of products and services
+  including network security, cloud security, endpoint security, and mobile
+  security. Checkpoint's technology helps businesses to prevent cyber attacks,
+  detect potential threats, and respond quickly to any security incidents. Their
+  innovative approach to cybersecurity has made them a leader in the industry,
+  trusted by businesses worldwide to keep their sensitive data and systems safe
+  from hackers and other cyber criminals.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
