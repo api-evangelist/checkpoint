@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/checkpoint/refs/heads/main/apis.yml
 apis:
   - aid: checkpoint:cloudguard-api
-    name: CloudGuard API
+    name: Checkpoint CloudGuard API
     tags: []
     humanURL: https://docs.cgn.portal.checkpoint.com/reference/introduction
     properties: []
@@ -12,7 +12,7 @@ apis:
       applications using the CloudGuard API. With version 2 of this API,
       developers can access functions using RESTful HTTP requests.
   - aid: checkpoint:management-api
-    name: Management API
+    name: Checkpoint Management API
     tags: []
     humanURL: >-
       https://sc1.checkpoint.com/documents/latest/APIs/index.html#introduction~v2%20
@@ -23,7 +23,7 @@ apis:
       objects, work on the security policy using the SmartConsole GUI, it is now
       possible to do the same using command line tools and through web-services.
   - aid: checkpoint:gaia-api
-    name: GAIA API
+    name: Checkpoint GAIA API
     tags: []
     humanURL: >-
       https://sc1.checkpoint.com/documents/latest/GaiaAPIs/index.html#introduction~v1.8%20
@@ -34,7 +34,7 @@ apis:
       commands from Expert mode, it is now possible to do the same using command
       line tools and through web-services.
   - aid: checkpoint:identity-awareness-api
-    name: Identity Awareness API
+    name: Checkpoint Identity Awareness API
     tags: []
     humanURL: >-
       https://sc1.checkpoint.com/documents/latest/IdentityAPIs/index.html#ida_api_intro~v1%20
@@ -48,7 +48,7 @@ apis:
       API, you can create and revoke identities, and query the Identity
       Awareness Software Blade regarding users, IP addresses, and computers.
   - aid: checkpoint:spark-management-api
-    name: Spark Management API
+    name: Checkpoint Spark Management API
     tags: []
     humanURL: >-
       https://sc1.checkpoint.com/documents/latest/SmpAPIs/index.html#introduction~v1%20
@@ -59,7 +59,7 @@ apis:
       create objects, work on the security policy using the webUI, it is now
       possible to do the same using command line tools and through web-services.
   - aid: checkpoint:zero-touch-api
-    name: Zero Touch API
+    name: Checkpoint Zero Touch API
     tags: []
     humanURL: >-
       https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm
@@ -68,14 +68,14 @@ apis:
       This API is a way to read information and send commands to the Zero Touch
       server.
   - aid: checkpoint:harmony-email-api
-    name: Harmony Email API
+    name: Checkpoint Harmony Email API
     tags: []
     humanURL: >-
       https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
     properties: []
     description: 'This guide describes the available REST API for Harmony Email '
   - aid: checkpoint:th-api
-    name: TH API
+    name: Checkpoint TH API
     tags: []
     humanURL: https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html
     properties: []
@@ -83,7 +83,7 @@ apis:
       This is the main serach query for indicators in the database Will return
       list of records that match the search conditions
   - aid: checkpoint:cloudguard-waf-api
-    name: CloudGuard WAF API
+    name: Checkpoint CloudGuard WAF API
     tags: []
     humanURL: https://waf-doc.inext.checkpoint.com/references/management-api
     properties: []
