@@ -5,11 +5,7 @@ apis:
   - aid: checkpoint:checkpoint
     name: Checkpoint
     tags:
-      - Security
-      - Cloud Security
-      - Network Security
-      - Mobile Security
-      - Endpoint Security
+      - API
     humanURL: https://www.checkpoint.com
     properties:
       - url: https://www.checkpoint.com
@@ -18,6 +14,95 @@ apis:
       Learn what API discovery is, and how mapping out an organizations API
       footprint helps it defend against data breaches and other potential
       cyberattacks.
+  - aid: checkpoint:cloudguard-api
+    name: CloudGuard API
+    description: >-
+      Application developers can access CloudGuard functionality from within
+      applications using the CloudGuard API. With version 2 of this API,
+      developers can access functions using RESTful HTTP requests.
+    humanURL: https://docs.cgn.portal.checkpoint.com/reference/introduction
+    tags: []
+    properties: []
+  - aid: checkpoint:management-api
+    name: Management API
+    description: >-
+      R80 and above adds a new way to read information and to send commands to
+      the Check Point management server. Just like it is possible to create
+      objects, work on the security policy using the SmartConsole GUI, it is now
+      possible to do the same using command line tools and through web-services.
+    humanURL: >-
+      https://sc1.checkpoint.com/documents/latest/APIs/index.html#introduction~v2%20
+    tags: []
+    properties: []
+  - aid: checkpoint:gaia-api
+    name: GAIA API
+    description: >-
+      GAIA API provides a new way to read information and to send commands to
+      Check Points servers. Just like it is possible to use the CLISH or
+      commands from Expert mode, it is now possible to do the same using command
+      line tools and through web-services.
+    humanURL: >-
+      https://sc1.checkpoint.com/documents/latest/GaiaAPIs/index.html#introduction~v1.8%20
+    tags: []
+    properties: []
+  - aid: checkpoint:identity-awareness-api
+    name: Identity Awareness API
+    description: >-
+      The Identity Awareness Identity Web API is a flexible identity source that
+      you can use for simple integration with 3rd party security and identity
+      products, such as ForeScout CounterACT and Aruba Networks ClearPass. The
+      Identity Web API identity source provides a flexible method for the
+      creation of identities based on environment needs. With the Identity Web
+      API, you can create and revoke identities, and query the Identity
+      Awareness Software Blade regarding users, IP addresses, and computers.
+    humanURL: >-
+      https://sc1.checkpoint.com/documents/latest/IdentityAPIs/index.html#ida_api_intro~v1%20
+    tags: []
+    properties: []
+  - aid: checkpoint:spark-management-api
+    name: Spark Management API
+    description: >-
+      The Spark Management API I/S adds a new way to read information and to
+      send commands to the Spark Management server. Just like it is possible to
+      create objects, work on the security policy using the webUI, it is now
+      possible to do the same using command line tools and through web-services.
+    humanURL: >-
+      https://sc1.checkpoint.com/documents/latest/SmpAPIs/index.html#introduction~v1%20
+    tags: []
+    properties: []
+  - aid: checkpoint:zero-touch-api
+    name: Zero Touch API
+    description: >-
+      This API is a way to read information and send commands to the Zero Touch
+      server.
+    humanURL: >-
+      https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm
+    tags: []
+    properties: []
+  - aid: checkpoint:harmony-email-api
+    name: Harmony Email API
+    description: 'This guide describes the available REST API for Harmony Email '
+    humanURL: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+    tags: []
+    properties: []
+  - aid: checkpoint:th-api
+    name: TH API
+    description: >-
+      This is the main serach query for indicators in the database Will return
+      list of records that match the search conditions
+    humanURL: https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html
+    tags: []
+    properties: []
+  - aid: checkpoint:cloudguard-waf-api
+    name: CloudGuard WAF API
+    description: >-
+      CloudGuard WAF provides a collection of GraphQL APIs that allows to
+      Authenticate, Create, Read, Update Delete any object in the system as well
+      as Publish or Enforce a set of changes.  
+    humanURL: https://waf-doc.inext.checkpoint.com/references/management-api
+    tags: []
+    properties: []
 name: Checkpoint
 tags:
   - Security
@@ -45,3 +130,4 @@ maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
 specificationVersion: '0.19'
+common: []
