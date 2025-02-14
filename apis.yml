@@ -5,7 +5,11 @@ apis:
   - aid: checkpoint:checkpoint
     name: Checkpoint
     tags:
-      - API
+      - Security
+      - Cloud Security
+      - Network Security
+      - Mobile Security
+      - Endpoint Security
     humanURL: https://www.checkpoint.com
     properties:
       - url: https://www.checkpoint.com
