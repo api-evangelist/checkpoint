@@ -133,12 +133,12 @@ apis:
       wide range of web-based attacks.
 name: Checkpoint
 tags:
-  - Security
-  - Cybersecurity
-  - Network Security
   - Cloud Security
+  - Cybersecurity
   - Endpoint Security
   - Mobile Security
+  - Network Security
+  - Security
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
