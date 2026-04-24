@@ -1,0 +1,88 @@
+openapi: 3.1.0
+info:
+  title: Check Point Identity Awareness API
+  description: >-
+    REST API for posting and querying user-to-IP identity associations on
+    Check Point gateways for use in identity-aware policy enforcement.
+  version: '1.0'
+  contact:
+    name: Check Point Support
+    url: https://www.checkpoint.com/support-services/
+externalDocs:
+  description: Identity Awareness API Reference
+  url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+servers:
+  - url: https://{gateway}/_IA_MU_Agent
+    description: Identity Awareness Web API
+    variables:
+      gateway:
+        default: gateway.example.com
+tags:
+  - name: Identity
+security:
+  - sharedSecret: []
+paths:
+  /idasdk/add-identity:
+    post:
+      operationId: addIdentity
+      summary: Associate a user identity with an IP
+      tags: [Identity]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [shared-secret, requests]
+              properties:
+                shared-secret:
+                  type: string
+                requests:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      ip-address:
+                        type: string
+                      user:
+                        type: string
+                      machine:
+                        type: string
+                      session-timeout:
+                        type: integer
+      responses:
+        '200':
+          description: Identity registered
+  /idasdk/delete-identity:
+    post:
+      operationId: deleteIdentity
+      summary: Remove a user identity association
+      tags: [Identity]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [shared-secret, requests]
+              properties:
+                shared-secret:
+                  type: string
+                requests:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      ip-address:
+                        type: string
+                      revoke-method:
+                        type: string
+      responses:
+        '200':
+          description: Identity removed
+components:
+  securitySchemes:
+    sharedSecret:
+      type: apiKey
+      in: header
+      name: X-chkp-shared-secret

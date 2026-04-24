@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Check Point CloudGuard API
+  description: >-
+    REST API for Check Point CloudGuard Native cloud security posture
+    management. Manages cloud accounts, assets, security policies, and
+    risk findings across AWS, Azure, and GCP environments.
+  version: '1.0'
+  contact:
+    name: Check Point CloudGuard Support
+    url: https://docs.cgn.portal.checkpoint.com/
+servers:
+  - url: https://api.dome9.com/v2
+    description: CloudGuard Production
+tags:
+  - name: Cloud Accounts
+  - name: Findings
+  - name: Rulesets
+  - name: Compliance
+security:
+  - basicAuth: []
+paths:
+  /CloudAccounts:
+    get:
+      operationId: listCloudAccounts
+      summary: List onboarded cloud accounts
+      tags: [Cloud Accounts]
+      responses:
+        '200':
+          description: Cloud accounts list
+    post:
+      operationId: createCloudAccount
+      summary: Onboard a cloud account
+      tags: [Cloud Accounts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                vendor:
+                  type: string
+                  enum: [aws, azure, google]
+                credentials:
+                  type: object
+      responses:
+        '201':
+          description: Cloud account onboarded
+  /Compliance/Finding:
+    get:
+      operationId: listFindings
+      summary: List compliance findings
+      tags: [Findings]
+      responses:
+        '200':
+          description: Findings
+  /Ruleset/view:
+    get:
+      operationId: listRulesets
+      summary: List rulesets used for posture management
+      tags: [Rulesets]
+      responses:
+        '200':
+          description: Rulesets list
+  /AssessmentHistoryV2:
+    get:
+      operationId: listAssessments
+      summary: List historical compliance assessments
+      tags: [Compliance]
+      responses:
+        '200':
+          description: Assessments
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

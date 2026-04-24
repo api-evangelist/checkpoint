@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.checkpoint.com/schemas/access-rule.json",
+  "title": "Check Point Access Rule",
+  "type": "object",
+  "required": ["layer"],
+  "properties": {
+    "name": { "type": "string" },
+    "layer": { "type": "string" },
+    "uid": { "type": "string" },
+    "source": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "destination": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "service": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "action": {
+      "type": "string",
+      "enum": ["Accept", "Drop", "Reject", "Inline Layer"]
+    },
+    "enabled": { "type": "boolean" },
+    "track": { "type": "string" }
+  }
+}

@@ -1,0 +1,37 @@
+extends:
+  - spectral:oas
+rules:
+  checkpoint-https-only:
+    description: Check Point APIs must use HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://'
+  checkpoint-info-contact:
+    description: Definitions must declare contact information.
+    severity: error
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+  checkpoint-session-token:
+    description: Management/Gaia APIs should use the X-chkp-sid session token header.
+    severity: warn
+    given: $.components.securitySchemes
+    then:
+      function: truthy
+  checkpoint-operation-tags:
+    description: Operations must declare at least one tag.
+    severity: warn
+    given: $.paths[*][get,post,put,delete,patch]
+    then:
+      field: tags
+      function: truthy
+  checkpoint-publish-after-changes:
+    description: Mutating operations should be paired with /publish to commit changes.
+    severity: info
+    given: $.paths
+    then:
+      function: truthy

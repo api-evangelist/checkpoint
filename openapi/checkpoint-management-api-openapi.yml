@@ -1,0 +1,230 @@
+openapi: 3.1.0
+info:
+  title: Check Point Management API
+  description: >-
+    REST API for the Check Point Smart-1 Security Management Server. Allows
+    automation of policy and object management including network and host
+    objects, services, security policies, access rules, NAT rules, and
+    publish/install operations.
+  version: '2.0'
+  contact:
+    name: Check Point Support
+    url: https://www.checkpoint.com/support-services/
+externalDocs:
+  description: Check Point Management API Reference
+  url: https://sc1.checkpoint.com/documents/latest/APIs/
+servers:
+  - url: https://{server}/web_api
+    description: Smart-1 Management Server
+    variables:
+      server:
+        default: management.example.com
+tags:
+  - name: Login
+  - name: Hosts
+  - name: Networks
+  - name: Services
+  - name: Access Rules
+  - name: NAT Rules
+  - name: Sessions
+security:
+  - sidToken: []
+paths:
+  /login:
+    post:
+      operationId: login
+      summary: Authenticate and obtain a session ID
+      tags: [Login]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [user, password]
+              properties:
+                user:
+                  type: string
+                password:
+                  type: string
+                domain:
+                  type: string
+      responses:
+        '200':
+          description: Session details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sid:
+                    type: string
+                  uid:
+                    type: string
+                  api-server-version:
+                    type: string
+  /logout:
+    post:
+      operationId: logout
+      summary: Logout the current session
+      tags: [Login]
+      responses:
+        '200':
+          description: Logout successful
+  /publish:
+    post:
+      operationId: publish
+      summary: Publish session changes
+      tags: [Sessions]
+      responses:
+        '200':
+          description: Changes published
+  /install-policy:
+    post:
+      operationId: installPolicy
+      summary: Install policy package on selected gateways
+      tags: [Sessions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [policy-package]
+              properties:
+                policy-package:
+                  type: string
+                targets:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Policy install task started
+  /show-hosts:
+    post:
+      operationId: showHosts
+      summary: Show host objects
+      tags: [Hosts]
+      responses:
+        '200':
+          description: Hosts list
+  /add-host:
+    post:
+      operationId: addHost
+      summary: Add a host object
+      tags: [Hosts]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name, ip-address]
+              properties:
+                name:
+                  type: string
+                ip-address:
+                  type: string
+      responses:
+        '200':
+          description: Host created
+  /show-networks:
+    post:
+      operationId: showNetworks
+      summary: Show network objects
+      tags: [Networks]
+      responses:
+        '200':
+          description: Networks list
+  /show-services-tcp:
+    post:
+      operationId: showServicesTcp
+      summary: Show TCP service objects
+      tags: [Services]
+      responses:
+        '200':
+          description: TCP services list
+  /show-access-rulebase:
+    post:
+      operationId: showAccessRulebase
+      summary: Show access rulebase
+      tags: [Access Rules]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name:
+                  type: string
+                  description: Layer name
+      responses:
+        '200':
+          description: Rulebase
+  /add-access-rule:
+    post:
+      operationId: addAccessRule
+      summary: Add an access rule
+      tags: [Access Rules]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [layer, position]
+              properties:
+                layer:
+                  type: string
+                position:
+                  oneOf:
+                    - type: string
+                    - type: object
+                name:
+                  type: string
+                source:
+                  type: array
+                  items:
+                    type: string
+                destination:
+                  type: array
+                  items:
+                    type: string
+                service:
+                  type: array
+                  items:
+                    type: string
+                action:
+                  type: string
+                  enum: [Accept, Drop, Reject]
+      responses:
+        '200':
+          description: Access rule created
+  /show-nat-rulebase:
+    post:
+      operationId: showNatRulebase
+      summary: Show NAT rulebase
+      tags: [NAT Rules]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                package:
+                  type: string
+      responses:
+        '200':
+          description: NAT rulebase
+components:
+  securitySchemes:
+    sidToken:
+      type: apiKey
+      in: header
+      name: X-chkp-sid
+      description: Session ID issued by /login.

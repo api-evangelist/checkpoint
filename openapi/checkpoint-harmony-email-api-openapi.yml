@@ -1,0 +1,55 @@
+openapi: 3.1.0
+info:
+  title: Check Point Harmony Email API
+  description: >-
+    REST API for Check Point Harmony Email and Collaboration (formerly
+    Avanan). Surfaces email security events, quarantined items, and
+    administrative actions.
+  version: '1.0'
+  contact:
+    name: Check Point Harmony Support
+    url: https://www.checkpoint.com/harmony/email-security/
+externalDocs:
+  description: Harmony Email API Reference
+  url: https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+servers:
+  - url: https://smart-api.avanan.net/v2.0
+    description: Harmony Email Production
+tags:
+  - name: Events
+  - name: Quarantine
+security:
+  - bearerAuth: []
+paths:
+  /events:
+    get:
+      operationId: listEvents
+      summary: List Harmony Email security events
+      tags: [Events]
+      parameters:
+        - name: startDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+        - name: endDate
+          in: query
+          schema:
+            type: string
+            format: date-time
+      responses:
+        '200':
+          description: Events list
+  /quarantine:
+    get:
+      operationId: listQuarantine
+      summary: List quarantined items
+      tags: [Quarantine]
+      responses:
+        '200':
+          description: Quarantine items
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

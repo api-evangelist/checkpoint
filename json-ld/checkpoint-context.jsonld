@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "checkpoint": "https://www.checkpoint.com/schemas/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Host": {
+      "@id": "checkpoint:Host",
+      "@context": {
+        "name": "schema:name",
+        "ipAddress": "checkpoint:ipAddress",
+        "comments": "schema:description"
+      }
+    },
+
+    "AccessRule": {
+      "@id": "checkpoint:AccessRule",
+      "@context": {
+        "name": "schema:name",
+        "source": "checkpoint:source",
+        "destination": "checkpoint:destination",
+        "service": "checkpoint:service",
+        "action": "checkpoint:action",
+        "enabled": {
+          "@id": "checkpoint:enabled",
+          "@type": "xsd:boolean"
+        }
+      }
+    },
+
+    "PolicyPackage": {
+      "@id": "checkpoint:PolicyPackage",
+      "@context": {
+        "name": "schema:name",
+        "uid": "checkpoint:uid",
+        "type": "checkpoint:type"
+      }
+    },
+
+    "CloudAccount": {
+      "@id": "checkpoint:CloudAccount",
+      "@context": {
+        "id": "checkpoint:id",
+        "name": "schema:name",
+        "vendor": "checkpoint:vendor",
+        "createdDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "ComplianceFinding": {
+      "@id": "checkpoint:ComplianceFinding",
+      "@context": {
+        "id": "checkpoint:findingId",
+        "severity": "checkpoint:severity",
+        "ruleName": "checkpoint:ruleName",
+        "status": "checkpoint:status"
+      }
+    },
+
+    "IdentitySession": {
+      "@id": "checkpoint:IdentitySession",
+      "@context": {
+        "ipAddress": "checkpoint:ipAddress",
+        "user": "schema:identifier",
+        "machine": "checkpoint:machine",
+        "sessionTimeout": {
+          "@id": "checkpoint:sessionTimeout",
+          "@type": "xsd:integer"
+        }
+      }
+    }
+  }
+}
