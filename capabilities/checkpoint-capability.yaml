@@ -1,0 +1,190 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point CloudGuard API
+  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets,
+    security policies, and risk findings across AWS, Azure, and GCP environments.
+  tags:
+  - Checkpoint
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: checkpoint
+    baseUri: https://api.dome9.com/v2
+    description: Check Point CloudGuard API HTTP API.
+    authentication:
+      type: basic
+      username: '{{CHECKPOINT_USERNAME}}'
+      password: '{{CHECKPOINT_PASSWORD}}'
+    resources:
+    - name: cloudaccounts
+      path: /CloudAccounts
+      operations:
+      - name: listcloudaccounts
+        method: GET
+        description: List onboarded cloud accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcloudaccount
+        method: POST
+        description: Onboard a cloud account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: compliance-finding
+      path: /Compliance/Finding
+      operations:
+      - name: listfindings
+        method: GET
+        description: List compliance findings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: ruleset-view
+      path: /Ruleset/view
+      operations:
+      - name: listrulesets
+        method: GET
+        description: List rulesets used for posture management
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: assessmenthistoryv2
+      path: /AssessmentHistoryV2
+      operations:
+      - name: listassessments
+        method: GET
+        description: List historical compliance assessments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: checkpoint-rest
+    description: REST adapter for Check Point CloudGuard API.
+    resources:
+    - path: /CloudAccounts
+      name: listcloudaccounts
+      operations:
+      - method: GET
+        name: listcloudaccounts
+        description: List onboarded cloud accounts
+        call: checkpoint.listcloudaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /CloudAccounts
+      name: createcloudaccount
+      operations:
+      - method: POST
+        name: createcloudaccount
+        description: Onboard a cloud account
+        call: checkpoint.createcloudaccount
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Compliance/Finding
+      name: listfindings
+      operations:
+      - method: GET
+        name: listfindings
+        description: List compliance findings
+        call: checkpoint.listfindings
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /Ruleset/view
+      name: listrulesets
+      operations:
+      - method: GET
+        name: listrulesets
+        description: List rulesets used for posture management
+        call: checkpoint.listrulesets
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /AssessmentHistoryV2
+      name: listassessments
+      operations:
+      - method: GET
+        name: listassessments
+        description: List historical compliance assessments
+        call: checkpoint.listassessments
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: checkpoint-mcp
+    transport: http
+    description: MCP adapter for Check Point CloudGuard API for AI agent use.
+    tools:
+    - name: listcloudaccounts
+      description: List onboarded cloud accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: checkpoint.listcloudaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcloudaccount
+      description: Onboard a cloud account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: checkpoint.createcloudaccount
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listfindings
+      description: List compliance findings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: checkpoint.listfindings
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listrulesets
+      description: List rulesets used for posture management
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: checkpoint.listrulesets
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listassessments
+      description: List historical compliance assessments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: checkpoint.listassessments
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_USERNAME: CHECKPOINT_USERNAME
+    CHECKPOINT_PASSWORD: CHECKPOINT_PASSWORD
