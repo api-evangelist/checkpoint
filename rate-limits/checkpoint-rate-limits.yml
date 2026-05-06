@@ -4,131 +4,52 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Check Point
 providerId: checkpoint
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Cloud Security
   - Cybersecurity
-  - Endpoint Security
-  - Firewall
-  - Identity Awareness
-  - Mobile Security
   - Network Security
   - Security
-  - Threat Prevention
-  - WAF
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Check Point API surface. Captures per-tier
-  quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to
-  be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+description: Check Point does not publish a single, unified rate-limit policy for its API portfolio.
+  Each API is bound to the customer's product deployment (on-prem Management Server, Smart-1 Cloud,
+  Infinity Portal tenant, CloudGuard, Harmony Email, Spark Management) and the practical request ceiling
+  is governed by deployment sizing rather than a published per-second number. The Management API documents
+  a session-based model (login, run commands, publish, logout) where concurrency is bounded by the
+  number of API sessions configured on the management server.
+notes: No public per-second / per-minute rate-limit table is published. Customers should consult the
+  product-specific Admin Guide on sk.checkpoint.com or open a TAC case for their deployment's tested
+  limits.
+sources:
+  - https://sc1.checkpoint.com/documents/latest/APIs/
+  - https://supportcenter.checkpoint.com/
 responseCodes:
   throttled: 429
-  quotaExceeded: 429
   serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Check Point Management API
-      - Check Point Gaia API
-      - Check Point CloudGuard API
-      - Check Point Identity Awareness API
-      - Check Point Spark Management API
-      - Check Point Zero Touch API
-      - Check Point Harmony Email API
-      - Check Point Threat Hunting API
-      - Check Point CloudGuard WAF API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Check Point Management API
-      - Check Point Gaia API
-      - Check Point CloudGuard API
-      - Check Point Identity Awareness API
-      - Check Point Spark Management API
-      - Check Point Zero Touch API
-      - Check Point Harmony Email API
-      - Check Point Threat Hunting API
-      - Check Point CloudGuard WAF API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Check Point Management API
-      - Check Point Gaia API
-      - Check Point CloudGuard API
-      - Check Point Identity Awareness API
-      - Check Point Spark Management API
-      - Check Point Zero Touch API
-      - Check Point Harmony Email API
-      - Check Point Threat Hunting API
-      - Check Point CloudGuard WAF API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Check Point Management API
-      - Check Point Gaia API
-      - Check Point CloudGuard API
-      - Check Point Identity Awareness API
-      - Check Point Spark Management API
-      - Check Point Zero Touch API
-      - Check Point Harmony Email API
-      - Check Point Threat Hunting API
-      - Check Point CloudGuard WAF API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Check Point Management API
-      - Check Point Gaia API
-      - Check Point CloudGuard API
-      - Check Point Identity Awareness API
-      - Check Point Spark Management API
-      - Check Point Zero Touch API
-      - Check Point Harmony Email API
-      - Check Point Threat Hunting API
-      - Check Point CloudGuard WAF API
+  - name: Management API session concurrency
+    scope: management-server
+    metric: concurrent_requests
+    limit: 'see deployment sizing — typically bounded by configured api-sessions on the management server'
+    notes: The Check Point Management API uses session-based concurrency. Limits are determined by the
+      management server configuration, not a published per-second cap.
+  - name: CloudGuard / Harmony / Infinity Portal APIs
+    scope: tenant
+    metric: varies
+    limit: 'see Infinity Portal admin guide; not publicly documented'
+    notes: Cloud-hosted APIs may apply tenant-scoped throttling but Check Point does not publish the
+      numeric ceilings.
 policies:
+  - name: Session Lifecycle (Management API)
+    description: Clients call /login to obtain a session token (sid), perform commands, then /publish
+      and /logout. Long-lived sessions block other writers; close sessions promptly.
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+    description: On 429 / 503, apply exponential backoff with jitter and retry. Sustained pressure
+      should be discussed with Check Point TAC.
+  - name: Deployment Sizing
+    description: Practical throughput depends on management-server CPU/RAM and the configured api-sessions
+      pool. Resize the management server rather than expecting cloud-style horizontal scale.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

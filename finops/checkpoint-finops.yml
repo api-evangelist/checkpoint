@@ -1,194 +1,95 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Check Point
+providerId: checkpoint
+created: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - Cloud Security
+  - Cybersecurity
+  - Network Security
+  - Security
+  - FinOps
+  - FOCUS
+description: 'FOCUS-aligned FinOps for Check Point: enterprise license + subscription model where API
+  access is bundled into the underlying product license. Spend is tracked as discrete contractual line
+  items (term subscriptions, support, professional services) rather than per-API-request usage.'
+notes: Check Point does not expose a metered usage API for billing. FinOps shape below reflects the
+  channel-quoted enterprise license model.
+sources:
+  - https://www.checkpoint.com/
+  - https://www.checkpoint.com/products/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-provider: Check Point
-providerId: checkpoint
-publisherName: Check Point
-serviceCategory: API
-created: '2026-05-04'
-modified: '2026-05-04'
-tags:
-  - Cloud Security
-  - Cybersecurity
-  - Endpoint Security
-  - Firewall
-  - Identity Awareness
-  - Mobile Security
-  - Network Security
-  - Security
-  - Threat Prevention
-  - WAF
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Check Point API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+publisherName: Check Point Software Technologies Ltd.
+serviceCategory: Security
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Subscription
+  billingFrequency: Annual
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
+    - Usage
     - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
   ServiceName: Check Point
-  ServiceCategory: Developer Tools / API
+  ServiceCategory: Security
   ProviderName: Check Point
-  PublisherName: Check Point
-  InvoiceIssuerName: Check Point
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Check Point Software Technologies Ltd.
+  InvoiceIssuerName: Check Point Software Technologies Ltd.
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
+  PricingCategory: Subscription
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: product_subscription
+    description: Per-product term subscription line (Quantum, CloudGuard, Harmony, Infinity, Spark)
+    unit: month
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
+      - product
+      - sku
       - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+  - name: gateway_throughput
+    description: Throughput tier (Mbps / Gbps) attached to a Quantum gateway license
+    unit: Mbps
+    aggregation: max
+    dimensions:
+      - gateway
+      - blade_set
+  - name: protected_assets
+    description: Endpoints, mailboxes, cloud assets, or users covered under Harmony / CloudGuard
+      subscriptions
+    unit: asset
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+      - product
+      - environment
+  - name: support_subscription
+    description: Premium / Diamond / Elite support contract line
+    unit: month
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
       - tier
-apis:
-  - name: Check Point Management API
-    baseURL: https://management.example.com/web_api
-    tags:
-      - Firewall
-      - Management
-      - Network Security
-    serviceName: Check Point Management API
-    serviceCategory: API
-  - name: Check Point Gaia API
-    baseURL: https://gateway.example.com/gaia_api
-    tags:
-      - Gaia
-      - Operating System
-    serviceName: Check Point Gaia API
-    serviceCategory: API
-  - name: Check Point CloudGuard API
-    baseURL: https://api.dome9.com/v2
-    tags:
-      - Cloud Security
-      - Compliance
-      - Posture Management
-    serviceName: Check Point CloudGuard API
-    serviceCategory: API
-  - name: Check Point Identity Awareness API
-    baseURL: https://gateway.example.com/_IA_MU_Agent
-    tags:
-      - Identity
-      - Network Security
-    serviceName: Check Point Identity Awareness API
-    serviceCategory: API
-  - name: Check Point Spark Management API
-    baseURL: ''
-    tags:
-      - SMB
-      - Spark
-    serviceName: Check Point Spark Management API
-    serviceCategory: API
-  - name: Check Point Zero Touch API
-    baseURL: ''
-    tags:
-      - Deployment
-      - Zero Touch
-    serviceName: Check Point Zero Touch API
-    serviceCategory: API
-  - name: Check Point Harmony Email API
-    baseURL: https://smart-api.avanan.net/v2.0
-    tags:
-      - Email Security
-      - Harmony
-    serviceName: Check Point Harmony Email API
-    serviceCategory: API
-  - name: Check Point Threat Hunting API
-    baseURL: ''
-    tags:
-      - Threat Hunting
-      - Threat Intelligence
-    serviceName: Check Point Threat Hunting API
-    serviceCategory: API
-  - name: Check Point CloudGuard WAF API
-    baseURL: ''
-    tags:
-      - WAF
-      - Web Security
-    serviceName: Check Point CloudGuard WAF API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+principles:
+  - name: Visibility
+    description: Track Check Point spend through Infinity Portal license inventory and the Check Point
+      User Center; reconcile against partner invoices for term renewals.
+  - name: Allocation
+    description: Tag licenses by gateway, business unit, and environment in the Infinity Portal so
+      cyber-security spend can be charged back to consuming organizations.
+  - name: Optimization
+    description: Right-size gateways before renewal, consolidate blades into Infinity bundles where
+      eligible, and align license terms (1Y vs 3Y) with refresh cycles to capture multi-year discounts.
+  - name: Accountability
+    description: Security architecture owns license posture; finance owns renewal calendar; SOC owns
+      consumption telemetry and ensures unused entitlements are surfaced before renewal.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
