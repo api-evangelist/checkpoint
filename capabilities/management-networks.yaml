@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point Management API — Networks
+  description: 'Check Point Management API — Networks. 1 operations. Lead operation: Show network objects. Self-contained
+    Naftiko capability covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Networks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-networks
+    baseUri: https://{server}/web_api
+    description: Check Point Management API — Networks business capability. Self-contained, no shared references.
+    resources:
+    - name: show-networks
+      path: /show-networks
+      operations:
+      - name: shownetworks
+        method: POST
+        description: Show network objects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-chkp-sid
+      value: '{{env.CHECKPOINT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: management-networks-rest
+    port: 8080
+    description: REST adapter for Check Point Management API — Networks. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/show-networks
+      name: show-networks
+      description: REST surface for show-networks.
+      operations:
+      - method: POST
+        name: shownetworks
+        description: Show network objects
+        call: management-networks.shownetworks
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-networks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point Management API — Networks. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: show-network-objects
+      description: Show network objects
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: management-networks.shownetworks
+      outputParameters:
+      - type: object
+        mapping: $.

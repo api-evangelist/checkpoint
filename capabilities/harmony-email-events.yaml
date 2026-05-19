@@ -1,0 +1,83 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point Harmony Email API — Events
+  description: 'Check Point Harmony Email API — Events. 1 operations. Lead operation: List Harmony Email security events.
+    Self-contained Naftiko capability covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Events
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: harmony-email-events
+    baseUri: https://smart-api.avanan.net/v2.0
+    description: Check Point Harmony Email API — Events business capability. Self-contained, no shared references.
+    resources:
+    - name: events
+      path: /events
+      operations:
+      - name: listevents
+        method: GET
+        description: List Harmony Email security events
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: startDate
+          in: query
+          type: string
+        - name: endDate
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.CHECKPOINT_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: harmony-email-events-rest
+    port: 8080
+    description: REST adapter for Check Point Harmony Email API — Events. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/events
+      name: events
+      description: REST surface for events.
+      operations:
+      - method: GET
+        name: listevents
+        description: List Harmony Email security events
+        call: harmony-email-events.listevents
+        with:
+          startDate: rest.startDate
+          endDate: rest.endDate
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: harmony-email-events-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point Harmony Email API — Events. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-harmony-email-security-events
+      description: List Harmony Email security events
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: harmony-email-events.listevents
+      with:
+        startDate: tools.startDate
+        endDate: tools.endDate
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point CloudGuard API — Findings
+  description: 'Check Point CloudGuard API — Findings. 1 operations. Lead operation: List compliance findings. Self-contained
+    Naftiko capability covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Findings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cloudguard-findings
+    baseUri: https://api.dome9.com/v2
+    description: Check Point CloudGuard API — Findings business capability. Self-contained, no shared references.
+    resources:
+    - name: Compliance-Finding
+      path: /Compliance/Finding
+      operations:
+      - name: listfindings
+        method: GET
+        description: List compliance findings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: basic
+      username: '{{env.CHECKPOINT_USER}}'
+      password: '{{env.CHECKPOINT_PASS}}'
+  exposes:
+  - type: rest
+    namespace: cloudguard-findings-rest
+    port: 8080
+    description: REST adapter for Check Point CloudGuard API — Findings. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/compliance/finding
+      name: compliance-finding
+      description: REST surface for Compliance-Finding.
+      operations:
+      - method: GET
+        name: listfindings
+        description: List compliance findings
+        call: cloudguard-findings.listfindings
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cloudguard-findings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point CloudGuard API — Findings. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-compliance-findings
+      description: List compliance findings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cloudguard-findings.listfindings
+      outputParameters:
+      - type: object
+        mapping: $.

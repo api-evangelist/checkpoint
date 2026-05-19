@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point Management API — Services
+  description: 'Check Point Management API — Services. 1 operations. Lead operation: Show TCP service objects. Self-contained
+    Naftiko capability covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Services
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: management-services
+    baseUri: https://{server}/web_api
+    description: Check Point Management API — Services business capability. Self-contained, no shared references.
+    resources:
+    - name: show-services-tcp
+      path: /show-services-tcp
+      operations:
+      - name: showservicestcp
+        method: POST
+        description: Show TCP service objects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-chkp-sid
+      value: '{{env.CHECKPOINT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: management-services-rest
+    port: 8080
+    description: REST adapter for Check Point Management API — Services. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/show-services-tcp
+      name: show-services-tcp
+      description: REST surface for show-services-tcp.
+      operations:
+      - method: POST
+        name: showservicestcp
+        description: Show TCP service objects
+        call: management-services.showservicestcp
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: management-services-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point Management API — Services. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: show-tcp-service-objects
+      description: Show TCP service objects
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: management-services.showservicestcp
+      outputParameters:
+      - type: object
+        mapping: $.

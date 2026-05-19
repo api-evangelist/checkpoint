@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point CloudGuard API — Rulesets
+  description: 'Check Point CloudGuard API — Rulesets. 1 operations. Lead operation: List rulesets used for posture management.
+    Self-contained Naftiko capability covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Rulesets
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cloudguard-rulesets
+    baseUri: https://api.dome9.com/v2
+    description: Check Point CloudGuard API — Rulesets business capability. Self-contained, no shared references.
+    resources:
+    - name: Ruleset-view
+      path: /Ruleset/view
+      operations:
+      - name: listrulesets
+        method: GET
+        description: List rulesets used for posture management
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: basic
+      username: '{{env.CHECKPOINT_USER}}'
+      password: '{{env.CHECKPOINT_PASS}}'
+  exposes:
+  - type: rest
+    namespace: cloudguard-rulesets-rest
+    port: 8080
+    description: REST adapter for Check Point CloudGuard API — Rulesets. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/ruleset/view
+      name: ruleset-view
+      description: REST surface for Ruleset-view.
+      operations:
+      - method: GET
+        name: listrulesets
+        description: List rulesets used for posture management
+        call: cloudguard-rulesets.listrulesets
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cloudguard-rulesets-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point CloudGuard API — Rulesets. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-rulesets-used-posture-management
+      description: List rulesets used for posture management
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cloudguard-rulesets.listrulesets
+      outputParameters:
+      - type: object
+        mapping: $.

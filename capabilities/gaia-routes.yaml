@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point Gaia API — Routes
+  description: 'Check Point Gaia API — Routes. 1 operations. Lead operation: Show static routes. Self-contained Naftiko capability
+    covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Routes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: gaia-routes
+    baseUri: https://{gateway}/gaia_api
+    description: Check Point Gaia API — Routes business capability. Self-contained, no shared references.
+    resources:
+    - name: show-static-routes
+      path: /show-static-routes
+      operations:
+      - name: showstaticroutes
+        method: POST
+        description: Show static routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-chkp-sid
+      value: '{{env.CHECKPOINT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: gaia-routes-rest
+    port: 8080
+    description: REST adapter for Check Point Gaia API — Routes. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/show-static-routes
+      name: show-static-routes
+      description: REST surface for show-static-routes.
+      operations:
+      - method: POST
+        name: showstaticroutes
+        description: Show static routes
+        call: gaia-routes.showstaticroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: gaia-routes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point Gaia API — Routes. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: show-static-routes
+      description: Show static routes
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: gaia-routes.showstaticroutes
+      outputParameters:
+      - type: object
+        mapping: $.

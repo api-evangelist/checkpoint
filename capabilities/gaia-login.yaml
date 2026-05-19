@@ -1,0 +1,82 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Check Point Gaia API — Login
+  description: 'Check Point Gaia API — Login. 1 operations. Lead operation: Login to Gaia. Self-contained Naftiko capability
+    covering one Checkpoint business surface.'
+  tags:
+  - Checkpoint
+  - Login
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    CHECKPOINT_API_KEY: CHECKPOINT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: gaia-login
+    baseUri: https://{gateway}/gaia_api
+    description: Check Point Gaia API — Login business capability. Self-contained, no shared references.
+    resources:
+    - name: login
+      path: /login
+      operations:
+      - name: gaialogin
+        method: POST
+        description: Login to Gaia
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: apikey
+      key: X-chkp-sid
+      value: '{{env.CHECKPOINT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: gaia-login-rest
+    port: 8080
+    description: REST adapter for Check Point Gaia API — Login. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/login
+      name: login
+      description: REST surface for login.
+      operations:
+      - method: POST
+        name: gaialogin
+        description: Login to Gaia
+        call: gaia-login.gaialogin
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: gaia-login-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Check Point Gaia API — Login. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: login-gaia
+      description: Login to Gaia
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: gaia-login.gaialogin
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
