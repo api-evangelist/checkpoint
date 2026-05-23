@@ -1,0 +1,110 @@
+{
+  "provider": "Check Point",
+  "providerId": "checkpoint",
+  "kind": "json-structure",
+  "description": "Structural overview of the Check Point API surface; extracted from openapi/.",
+  "schemaCount": 0,
+  "operationCount": 11,
+  "schemas": [],
+  "operations": [
+    {
+      "method": "POST",
+      "path": "/login",
+      "operationId": "login",
+      "summary": "Authenticate and obtain a session ID",
+      "tags": [
+        "Login"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/logout",
+      "operationId": "logout",
+      "summary": "Logout the current session",
+      "tags": [
+        "Login"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/publish",
+      "operationId": "publish",
+      "summary": "Publish session changes",
+      "tags": [
+        "Sessions"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/install-policy",
+      "operationId": "installPolicy",
+      "summary": "Install policy package on selected gateways",
+      "tags": [
+        "Sessions"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/show-hosts",
+      "operationId": "showHosts",
+      "summary": "Show host objects",
+      "tags": [
+        "Hosts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add-host",
+      "operationId": "addHost",
+      "summary": "Add a host object",
+      "tags": [
+        "Hosts"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/show-networks",
+      "operationId": "showNetworks",
+      "summary": "Show network objects",
+      "tags": [
+        "Networks"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/show-services-tcp",
+      "operationId": "showServicesTcp",
+      "summary": "Show TCP service objects",
+      "tags": [
+        "Services"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/show-access-rulebase",
+      "operationId": "showAccessRulebase",
+      "summary": "Show access rulebase",
+      "tags": [
+        "Access Rules"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/add-access-rule",
+      "operationId": "addAccessRule",
+      "summary": "Add an access rule",
+      "tags": [
+        "Access Rules"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/show-nat-rulebase",
+      "operationId": "showNatRulebase",
+      "summary": "Show NAT rulebase",
+      "tags": [
+        "NAT Rules"
+      ]
+    }
+  ]
+}

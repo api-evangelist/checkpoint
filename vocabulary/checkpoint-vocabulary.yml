@@ -1,0 +1,12 @@
+name: Check Point Domain Vocabulary
+provider: Check Point
+providerId: checkpoint
+description: Tag-derived vocabulary for the Check Point API surface; sourced from openapi/ tags.
+terms:
+- term: Login
+- term: Hosts
+- term: Networks
+- term: Services
+- term: Access Rules
+- term: NAT Rules
+- term: Sessions
