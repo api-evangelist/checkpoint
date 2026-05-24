@@ -211,6 +211,8 @@ common:
   url: spectral/checkpoint-spectral.yml
 - type: NaftikoCapabilities
   url: naftiko/checkpoint-capabilities.yml
+- type: LLMsTxt
+  url: https://docs.cgn.portal.checkpoint.com/llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
