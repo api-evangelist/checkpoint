@@ -1,0 +1,219 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point Management API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-chkp-sid",
+      "value": "{{X-chkp-sid}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Login",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Authenticate and obtain a session ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Authenticate and obtain a session ID"
+        },
+        {
+          "info": {
+            "name": "Logout the current session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/logout"
+          },
+          "docs": "Logout the current session"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sessions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Publish session changes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/publish"
+          },
+          "docs": "Publish session changes"
+        },
+        {
+          "info": {
+            "name": "Install policy package on selected gateways",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/install-policy",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Install policy package on selected gateways"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Hosts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show host objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/show-hosts"
+          },
+          "docs": "Show host objects"
+        },
+        {
+          "info": {
+            "name": "Add a host object",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/add-host",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a host object"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Networks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show network objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/show-networks"
+          },
+          "docs": "Show network objects"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Services",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show TCP service objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/show-services-tcp"
+          },
+          "docs": "Show TCP service objects"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Access Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show access rulebase",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/show-access-rulebase",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Show access rulebase"
+        },
+        {
+          "info": {
+            "name": "Add an access rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/add-access-rule",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add an access rule"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "NAT Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show NAT rulebase",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{server}/web_api/show-nat-rulebase",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Show NAT rulebase"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

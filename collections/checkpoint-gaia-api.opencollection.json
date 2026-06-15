@@ -1,0 +1,98 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point Gaia API",
+    "version": "1.8"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-chkp-sid",
+      "value": "{{X-chkp-sid}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Login",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login to Gaia",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{gateway}/gaia_api/login",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Login to Gaia"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "System",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show system information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{gateway}/gaia_api/show-system-info"
+          },
+          "docs": "Show system information"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Interfaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show network interfaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{gateway}/gaia_api/show-interfaces"
+          },
+          "docs": "Show network interfaces"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Routes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show static routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{gateway}/gaia_api/show-static-routes"
+          },
+          "docs": "Show static routes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

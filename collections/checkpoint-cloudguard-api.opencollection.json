@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cloud Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List onboarded cloud accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dome9.com/v2/CloudAccounts"
+          },
+          "docs": "List onboarded cloud accounts"
+        },
+        {
+          "info": {
+            "name": "Onboard a cloud account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dome9.com/v2/CloudAccounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Onboard a cloud account"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Findings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List compliance findings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dome9.com/v2/Compliance/Finding"
+          },
+          "docs": "List compliance findings"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rulesets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List rulesets used for posture management",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dome9.com/v2/Ruleset/view"
+          },
+          "docs": "List rulesets used for posture management"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Compliance",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List historical compliance assessments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dome9.com/v2/AssessmentHistoryV2"
+          },
+          "docs": "List historical compliance assessments"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

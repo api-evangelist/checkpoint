@@ -1,0 +1,278 @@
+{
+  "item": [
+    {
+      "id": "987ade64-02af-411a-b44e-b85abcd0bc54",
+      "name": "Identity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2a044b26-61b9-4333-b35e-1cdd0ec3b87c",
+          "name": "Associate a user identity with an IP",
+          "request": {
+            "name": "Associate a user identity with an IP",
+            "description": {},
+            "url": {
+              "path": [
+                "idasdk",
+                "add-identity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{gateway}}",
+                  "key": "gateway"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shared-secret\": \"<string>\",\n  \"requests\": [\n    {\n      \"ip-address\": \"<string>\",\n      \"user\": \"<string>\",\n      \"machine\": \"<string>\",\n      \"session-timeout\": \"<integer>\"\n    },\n    {\n      \"ip-address\": \"<string>\",\n      \"user\": \"<string>\",\n      \"machine\": \"<string>\",\n      \"session-timeout\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3175b222-ae62-46be-90a2-80823ed9e36f",
+              "name": "Identity registered",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "idasdk",
+                    "add-identity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{gateway}}",
+                      "key": "gateway"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-chkp-shared-secret",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"shared-secret\": \"<string>\",\n  \"requests\": [\n    {\n      \"ip-address\": \"<string>\",\n      \"user\": \"<string>\",\n      \"machine\": \"<string>\",\n      \"session-timeout\": \"<integer>\"\n    },\n    {\n      \"ip-address\": \"<string>\",\n      \"user\": \"<string>\",\n      \"machine\": \"<string>\",\n      \"session-timeout\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd2480b6-4497-46e3-9b25-dd05e1e03956",
+          "name": "Remove a user identity association",
+          "request": {
+            "name": "Remove a user identity association",
+            "description": {},
+            "url": {
+              "path": [
+                "idasdk",
+                "delete-identity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": {
+                    "content": "",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "{{gateway}}",
+                  "key": "gateway"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"shared-secret\": \"<string>\",\n  \"requests\": [\n    {\n      \"ip-address\": \"<string>\",\n      \"revoke-method\": \"<string>\"\n    },\n    {\n      \"ip-address\": \"<string>\",\n      \"revoke-method\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e4b6fee9-d3c0-49a8-b2da-91bc3ebea4cb",
+              "name": "Identity removed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "idasdk",
+                    "delete-identity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "type": "any",
+                      "value": "{{gateway}}",
+                      "key": "gateway"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-chkp-shared-secret",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"shared-secret\": \"<string>\",\n  \"requests\": [\n    {\n      \"ip-address\": \"<string>\",\n      \"revoke-method\": \"<string>\"\n    },\n    {\n      \"ip-address\": \"<string>\",\n      \"revoke-method\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "gateway.example.com",
+      "key": "gateway"
+    },
+    {
+      "type": "string",
+      "value": "https://{{gateway}}/_IA_MU_Agent",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-chkp-shared-secret"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "abedf671-b978-4b97-920c-3c64c255fc75",
+    "name": "Check Point Identity Awareness API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for posting and querying user-to-IP identity associations on Check Point gateways for use in identity-aware policy enforcement.\n\nContact Support:\n Name: Check Point Support",
+      "type": "text/plain"
+    }
+  }
+}

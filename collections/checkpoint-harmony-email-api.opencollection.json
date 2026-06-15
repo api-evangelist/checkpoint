@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point Harmony Email API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Events",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Harmony Email security events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://smart-api.avanan.net/v2.0/events",
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List Harmony Email security events"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Quarantine",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List quarantined items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://smart-api.avanan.net/v2.0/quarantine"
+          },
+          "docs": "List quarantined items"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
