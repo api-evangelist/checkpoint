@@ -183,7 +183,7 @@ common:
     url: json-schema/checkpoint-access-rule-schema.json
   - type: Spectral
     url: spectral/checkpoint-spectral.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.cgn.portal.checkpoint.com/llms.txt
 maintainers:
   - FN: Kin Lane
