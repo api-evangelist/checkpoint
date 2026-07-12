@@ -1,0 +1,35 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/checkpoint-cloudguard-api-openapi.yml, openapi/checkpoint-gaia-api-openapi.yml,
+  openapi/checkpoint-harmony-email-api-openapi.yml, openapi/checkpoint-identity-awareness-api-openapi.yml,
+  openapi/checkpoint-management-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/checkpoint-cloudguard-api-openapi.yml
+- name: sidToken
+  type: apiKey
+  in: header
+  parameter: X-chkp-sid
+  sources:
+  - openapi/checkpoint-gaia-api-openapi.yml
+  - openapi/checkpoint-management-api-openapi.yml
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  sources:
+  - openapi/checkpoint-harmony-email-api-openapi.yml
+- name: sharedSecret
+  type: apiKey
+  in: header
+  parameter: X-chkp-shared-secret
+  sources:
+  - openapi/checkpoint-identity-awareness-api-openapi.yml
