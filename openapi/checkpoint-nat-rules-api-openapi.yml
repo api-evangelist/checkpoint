@@ -1,0 +1,39 @@
+openapi: 3.1.0
+info:
+  title: Check Point CloudGuard Access Rules NAT Rules API
+  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
+  version: '1.0'
+  contact:
+    name: Check Point CloudGuard Support
+    url: https://docs.cgn.portal.checkpoint.com/
+servers:
+- url: https://api.dome9.com/v2
+  description: CloudGuard Production
+security:
+- basicAuth: []
+tags:
+- name: NAT Rules
+paths:
+  /show-nat-rulebase:
+    post:
+      operationId: showNatRulebase
+      summary: Show NAT rulebase
+      tags:
+      - NAT Rules
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                package:
+                  type: string
+      responses:
+        '200':
+          description: NAT rulebase
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

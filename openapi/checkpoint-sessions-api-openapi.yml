@@ -1,0 +1,54 @@
+openapi: 3.1.0
+info:
+  title: Check Point CloudGuard Access Rules Sessions API
+  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
+  version: '1.0'
+  contact:
+    name: Check Point CloudGuard Support
+    url: https://docs.cgn.portal.checkpoint.com/
+servers:
+- url: https://api.dome9.com/v2
+  description: CloudGuard Production
+security:
+- basicAuth: []
+tags:
+- name: Sessions
+paths:
+  /publish:
+    post:
+      operationId: publish
+      summary: Publish session changes
+      tags:
+      - Sessions
+      responses:
+        '200':
+          description: Changes published
+  /install-policy:
+    post:
+      operationId: installPolicy
+      summary: Install policy package on selected gateways
+      tags:
+      - Sessions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - policy-package
+              properties:
+                policy-package:
+                  type: string
+                targets:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Policy install task started
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

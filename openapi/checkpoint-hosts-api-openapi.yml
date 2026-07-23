@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Check Point CloudGuard Access Rules Hosts API
+  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
+  version: '1.0'
+  contact:
+    name: Check Point CloudGuard Support
+    url: https://docs.cgn.portal.checkpoint.com/
+servers:
+- url: https://api.dome9.com/v2
+  description: CloudGuard Production
+security:
+- basicAuth: []
+tags:
+- name: Hosts
+paths:
+  /show-hosts:
+    post:
+      operationId: showHosts
+      summary: Show host objects
+      tags:
+      - Hosts
+      responses:
+        '200':
+          description: Hosts list
+  /add-host:
+    post:
+      operationId: addHost
+      summary: Add a host object
+      tags:
+      - Hosts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - name
+              - ip-address
+              properties:
+                name:
+                  type: string
+                ip-address:
+                  type: string
+      responses:
+        '200':
+          description: Host created
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

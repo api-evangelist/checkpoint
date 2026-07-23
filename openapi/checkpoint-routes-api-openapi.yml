@@ -1,0 +1,30 @@
+openapi: 3.1.0
+info:
+  title: Check Point CloudGuard Access Rules Routes API
+  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
+  version: '1.0'
+  contact:
+    name: Check Point CloudGuard Support
+    url: https://docs.cgn.portal.checkpoint.com/
+servers:
+- url: https://api.dome9.com/v2
+  description: CloudGuard Production
+security:
+- basicAuth: []
+tags:
+- name: Routes
+paths:
+  /show-static-routes:
+    post:
+      operationId: showStaticRoutes
+      summary: Show static routes
+      tags:
+      - Routes
+      responses:
+        '200':
+          description: Static routes
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic

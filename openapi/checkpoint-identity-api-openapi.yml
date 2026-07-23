@@ -1,39 +1,34 @@
 openapi: 3.1.0
 info:
-  title: Check Point Identity Awareness API
-  description: >-
-    REST API for posting and querying user-to-IP identity associations on
-    Check Point gateways for use in identity-aware policy enforcement.
+  title: Check Point CloudGuard Access Rules Identity API
+  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
   version: '1.0'
   contact:
-    name: Check Point Support
-    url: https://www.checkpoint.com/support-services/
-externalDocs:
-  description: Identity Awareness API Reference
-  url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+    name: Check Point CloudGuard Support
+    url: https://docs.cgn.portal.checkpoint.com/
 servers:
-  - url: https://{gateway}/_IA_MU_Agent
-    description: Identity Awareness Web API
-    variables:
-      gateway:
-        default: gateway.example.com
-tags:
-  - name: Identity
+- url: https://api.dome9.com/v2
+  description: CloudGuard Production
 security:
-  - sharedSecret: []
+- basicAuth: []
+tags:
+- name: Identity
 paths:
   /idasdk/add-identity:
     post:
       operationId: addIdentity
       summary: Associate a user identity with an IP
-      tags: [Identity]
+      tags:
+      - Identity
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [shared-secret, requests]
+              required:
+              - shared-secret
+              - requests
               properties:
                 shared-secret:
                   type: string
@@ -57,14 +52,17 @@ paths:
     post:
       operationId: deleteIdentity
       summary: Remove a user identity association
-      tags: [Identity]
+      tags:
+      - Identity
       requestBody:
         required: true
         content:
           application/json:
             schema:
               type: object
-              required: [shared-secret, requests]
+              required:
+              - shared-secret
+              - requests
               properties:
                 shared-secret:
                   type: string
@@ -82,7 +80,6 @@ paths:
           description: Identity removed
 components:
   securitySchemes:
-    sharedSecret:
-      type: apiKey
-      in: header
-      name: X-chkp-shared-secret
+    basicAuth:
+      type: http
+      scheme: basic
