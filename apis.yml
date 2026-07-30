@@ -6,7 +6,20 @@ description: >-
   APIs for security automation, including the Smart-1 Management API, Gaia OS API, CloudGuard cloud security posture
   API, Identity Awareness API, Spark and Zero Touch device management APIs, Harmony Email and Collaboration API, Threat
   Hunting (TH) API, and CloudGuard WAF API.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/checkpoint.png
 url: https://raw.githubusercontent.com/api-evangelist/checkpoint/refs/heads/main/apis.yml
 type: Index
 access: 3rd-Party
@@ -26,136 +39,415 @@ created: '2025-01-08'
 modified: '2026-05-19'
 specificationVersion: '0.20'
 apis:
-  - aid: checkpoint:management-api
-    name: Check Point Management API
-    description: >-
-      REST API for the Smart-1 Security Management Server. Automates policy and object management including
-      host/network/service objects, access and NAT rulebases, and publish/install operations.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
-    baseURL: https://management.example.com/web_api
-    tags:
-      - Firewall
-      - Management
-      - Network Security
-    properties:
-      - type: Documentation
-        url: https://sc1.checkpoint.com/documents/latest/APIs/
-      - type: OpenAPI
-        url: openapi/checkpoint-management-api-openapi.yml
-  - aid: checkpoint:gaia-api
-    name: Check Point Gaia API
-    description: >-
-      REST API for the Check Point Gaia operating system. Manages gateway interfaces, routing, system info, and
-      configuration.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
-    baseURL: https://gateway.example.com/gaia_api
-    tags:
-      - Gaia
-      - Operating System
-    properties:
-      - type: Documentation
-        url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
-      - type: OpenAPI
-        url: openapi/checkpoint-gaia-api-openapi.yml
-  - aid: checkpoint:cloudguard-api
-    name: Check Point CloudGuard API
-    description: >-
-      REST API for CloudGuard Native cloud security posture management, cloud account onboarding, compliance findings,
-      and rulesets across AWS, Azure, and GCP.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://docs.cgn.portal.checkpoint.com/reference/introduction
-    baseURL: https://api.dome9.com/v2
-    tags:
-      - Cloud Security
-      - Compliance
-      - Posture Management
-    properties:
-      - type: Documentation
-        url: https://docs.cgn.portal.checkpoint.com/
-      - type: OpenAPI
-        url: openapi/checkpoint-cloudguard-api-openapi.yml
-  - aid: checkpoint:identity-awareness-api
-    name: Check Point Identity Awareness API
-    description: >-
-      REST API for posting and revoking user-to-IP identity associations on Check Point gateways, enabling
-      identity-aware policy enforcement.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
-    baseURL: https://gateway.example.com/_IA_MU_Agent
-    tags:
-      - Identity
-      - Network Security
-    properties:
-      - type: Documentation
-        url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
-      - type: OpenAPI
-        url: openapi/checkpoint-identity-awareness-api-openapi.yml
-  - aid: checkpoint:spark-management-api
-    name: Check Point Spark Management API
-    description: REST API for centrally managing Check Point Quantum Spark SMB appliances including configuration and policy.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://sc1.checkpoint.com/documents/latest/SmpAPIs/
-    tags:
-      - SMB
-      - Spark
-    properties:
-      - type: Documentation
-        url: https://sc1.checkpoint.com/documents/latest/SmpAPIs/
-  - aid: checkpoint:zero-touch-api
-    name: Check Point Zero Touch API
-    description: REST API for the Zero Touch deployment service that streamlines bring-up of new Check Point appliances.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm
-    tags:
-      - Deployment
-      - Zero Touch
-    properties:
-      - type: Documentation
-        url: https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm
-  - aid: checkpoint:harmony-email-api
-    name: Check Point Harmony Email API
-    description: >-
-      REST API for Harmony Email and Collaboration (formerly Avanan) surfacing email security events, quarantined items,
-      and admin actions.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: >-
+- aid: checkpoint:spark-management-api
+  name: Check Point Spark Management API
+  description: >-
+    REST API for centrally managing Check Point Quantum Spark SMB appliances including configuration and
+    policy.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://sc1.checkpoint.com/documents/latest/SmpAPIs/
+  tags:
+  - SMB
+  - Spark
+  properties:
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/SmpAPIs/
+- aid: checkpoint:zero-touch-api
+  name: Check Point Zero Touch API
+  description: >-
+    REST API for the Zero Touch deployment service that streamlines bring-up of new Check Point appliances.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: >-
+    https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm
+  tags:
+  - Deployment
+  - Zero Touch
+  properties:
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm
+- aid: checkpoint:th-api
+  name: Check Point Threat Hunting API
+  description: >-
+    REST API for the Check Point Threat Hunting (TH) platform exposing threat intelligence, indicators,
+    and hunting queries.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html
+  tags:
+  - Threat Hunting
+  - Threat Intelligence
+  properties:
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html
+- aid: checkpoint:cloudguard-waf-api
+  name: Check Point CloudGuard WAF API
+  description: >-
+    Management API for the CloudGuard WAF cloud-native web application and API protection product.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://waf-doc.inext.checkpoint.com/references/management-api
+  tags:
+  - WAF
+  - Web Security
+  properties:
+  - type: Documentation
+    url: https://waf-doc.inext.checkpoint.com/
+- aid: checkpoint:checkpoint-access-rules-api
+  name: Check Point Access Rules API
+  description: The Access Rules API from Check Point — 2 operation(s) for access rules.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Access Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-access-rules-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
       https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
-    baseURL: https://smart-api.avanan.net/v2.0
-    tags:
-      - Email Security
-      - Harmony
-    properties:
-      - type: Documentation
-        url: >-
-          https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
-      - type: OpenAPI
-        url: openapi/checkpoint-harmony-email-api-openapi.yml
-  - aid: checkpoint:th-api
-    name: Check Point Threat Hunting API
-    description: >-
-      REST API for the Check Point Threat Hunting (TH) platform exposing threat intelligence, indicators, and hunting
-      queries.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html
-    tags:
-      - Threat Hunting
-      - Threat Intelligence
-    properties:
-      - type: Documentation
-        url: https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html
-  - aid: checkpoint:cloudguard-waf-api
-    name: Check Point CloudGuard WAF API
-    description: Management API for the CloudGuard WAF cloud-native web application and API protection product.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://waf-doc.inext.checkpoint.com/references/management-api
-    tags:
-      - WAF
-      - Web Security
-    properties:
-      - type: Documentation
-        url: https://waf-doc.inext.checkpoint.com/
+- aid: checkpoint:checkpoint-cloud-accounts-api
+  name: Check Point Cloud Accounts API
+  description: The Cloud Accounts API from Check Point — 1 operation(s) for cloud accounts.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Cloud Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-cloud-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-compliance-api
+  name: Check Point Compliance API
+  description: The Compliance API from Check Point — 1 operation(s) for compliance.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Compliance
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-compliance-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-events-api
+  name: Check Point Events API
+  description: The Events API from Check Point — 1 operation(s) for events.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Events
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-events-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-findings-api
+  name: Check Point Findings API
+  description: The Findings API from Check Point — 1 operation(s) for findings.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Findings
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-findings-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-hosts-api
+  name: Check Point Hosts API
+  description: The Hosts API from Check Point — 2 operation(s) for hosts.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Hosts
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-hosts-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-identity-api
+  name: Check Point Identity API
+  description: The Identity API from Check Point — 2 operation(s) for identity.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Identity
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-identity-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-interfaces-api
+  name: Check Point Interfaces API
+  description: The Interfaces API from Check Point — 1 operation(s) for interfaces.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Interfaces
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-interfaces-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-login-api
+  name: Check Point Login API
+  description: The Login API from Check Point — 2 operation(s) for login.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Login
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-login-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-nat-rules-api
+  name: Check Point NAT Rules API
+  description: The NAT Rules API from Check Point — 1 operation(s) for nat rules.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - NAT Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-nat-rules-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-networks-api
+  name: Check Point Networks API
+  description: The Networks API from Check Point — 1 operation(s) for networks.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Networks
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-networks-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-quarantine-api
+  name: Check Point Quarantine API
+  description: The Quarantine API from Check Point — 1 operation(s) for quarantine.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Quarantine
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-quarantine-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-routes-api
+  name: Check Point Routes API
+  description: The Routes API from Check Point — 1 operation(s) for routes.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-routes-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-rulesets-api
+  name: Check Point Rulesets API
+  description: The Rulesets API from Check Point — 1 operation(s) for rulesets.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Rulesets
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-rulesets-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-services-api
+  name: Check Point Services API
+  description: The Services API from Check Point — 1 operation(s) for services.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Services
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-services-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-sessions-api
+  name: Check Point Sessions API
+  description: The Sessions API from Check Point — 2 operation(s) for sessions.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - Sessions
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-sessions-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
+- aid: checkpoint:checkpoint-system-api
+  name: Check Point System API
+  description: The System API from Check Point — 1 operation(s) for system.
+  humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
+  baseURL: https://management.example.com/web_api
+  tags:
+  - System
+  properties:
+  - type: OpenAPI
+    url: openapi/checkpoint-system-api-openapi.yml
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/APIs/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+  - type: Documentation
+    url: https://docs.cgn.portal.checkpoint.com/
+  - type: Documentation
+    url: https://sc1.checkpoint.com/documents/latest/IdentityAPIs/
+  - type: Documentation
+    url: >-
+      https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
 common:
   - type: AgenticAccess
     url: agentic-access/checkpoint-agentic-access.yml
