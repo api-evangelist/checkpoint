@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: Check Point Gaia API
+  description: >-
+    REST API for the Check Point Gaia operating system. Allows
+    administrators to manage gateway interfaces, routing, and system
+    configuration through automation.
+  version: '1.8'
+  contact:
+    name: Check Point Support
+    url: https://www.checkpoint.com/support-services/
+externalDocs:
+  description: Gaia API Reference
+  url: https://sc1.checkpoint.com/documents/latest/GaiaAPIs/
+servers:
+  - url: https://{gateway}/gaia_api
+    description: Gaia REST API
+    variables:
+      gateway:
+        default: gateway.example.com
+tags:
+  - name: Login
+  - name: System
+  - name: Interfaces
+  - name: Routes
+security:
+  - sidToken: []
+paths:
+  /login:
+    post:
+      operationId: gaiaLogin
+      summary: Login to Gaia
+      tags: [Login]
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [user, password]
+              properties:
+                user:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Session
+  /show-system-info:
+    post:
+      operationId: showSystemInfo
+      summary: Show system information
+      tags: [System]
+      responses:
+        '200':
+          description: System info
+  /show-interfaces:
+    post:
+      operationId: showInterfaces
+      summary: Show network interfaces
+      tags: [Interfaces]
+      responses:
+        '200':
+          description: Interfaces
+  /show-static-routes:
+    post:
+      operationId: showStaticRoutes
+      summary: Show static routes
+      tags: [Routes]
+      responses:
+        '200':
+          description: Static routes
+components:
+  securitySchemes:
+    sidToken:
+      type: apiKey
+      in: header
+      name: X-chkp-sid
