@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard Access Rules Routes API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Routes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show static routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dome9.com/v2/show-static-routes"
+          },
+          "docs": "Show static routes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

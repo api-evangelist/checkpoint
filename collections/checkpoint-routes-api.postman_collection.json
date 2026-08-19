@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "471635ed-cdf1-407f-ba27-ccfbe419e0ac",
+      "name": "Routes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "49c5573c-e938-42a0-be07-a39d06a93009",
+          "name": "Show static routes",
+          "request": {
+            "name": "Show static routes",
+            "description": {},
+            "url": {
+              "path": [
+                "show-static-routes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "19b7263b-7da9-47a6-9659-3c79435c595d",
+              "name": "Static routes",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "show-static-routes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dome9.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f457fdca-7ae7-402e-97de-aaa83580dc3d",
+    "name": "Check Point CloudGuard Access Rules Routes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.\n\nContact Support:\n Name: Check Point CloudGuard Support",
+      "type": "text/plain"
+    }
+  }
+}

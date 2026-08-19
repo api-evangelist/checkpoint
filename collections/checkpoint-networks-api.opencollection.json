@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard Access Rules Networks API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Networks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show network objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dome9.com/v2/show-networks"
+          },
+          "docs": "Show network objects"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

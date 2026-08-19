@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "36bc10e7-698f-4e0b-b96f-6b74ab5cdacb",
+      "name": "Interfaces",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24199c44-1856-4b22-aa12-85c18857f2f4",
+          "name": "Show network interfaces",
+          "request": {
+            "name": "Show network interfaces",
+            "description": {},
+            "url": {
+              "path": [
+                "show-interfaces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13fb1631-f197-424d-9467-e1d367d15e30",
+              "name": "Interfaces",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "show-interfaces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dome9.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "501740c5-5d11-46f0-a61e-e08c58237392",
+    "name": "Check Point CloudGuard Access Rules Interfaces API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.\n\nContact Support:\n Name: Check Point CloudGuard Support",
+      "type": "text/plain"
+    }
+  }
+}

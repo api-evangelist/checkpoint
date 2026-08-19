@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard Access Rules Identity API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Identity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Associate a user identity with an IP",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dome9.com/v2/idasdk/add-identity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Associate a user identity with an IP"
+        },
+        {
+          "info": {
+            "name": "Remove a user identity association",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dome9.com/v2/idasdk/delete-identity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove a user identity association"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

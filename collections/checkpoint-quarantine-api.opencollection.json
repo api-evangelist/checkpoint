@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard Access Rules Quarantine API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Quarantine",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List quarantined items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dome9.com/v2/quarantine"
+          },
+          "docs": "List quarantined items"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

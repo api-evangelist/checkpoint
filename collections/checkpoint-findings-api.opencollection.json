@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard Access Rules Findings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Findings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List compliance findings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.dome9.com/v2/Compliance/Finding"
+          },
+          "docs": "List compliance findings"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

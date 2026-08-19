@@ -1,0 +1,110 @@
+{
+  "item": [
+    {
+      "id": "a8ddfb90-9ff7-4d32-9ac3-954fd9555da6",
+      "name": "Compliance",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fd9b92d9-d84a-461f-80ac-c288492575ff",
+          "name": "List historical compliance assessments",
+          "request": {
+            "name": "List historical compliance assessments",
+            "description": {},
+            "url": {
+              "path": [
+                "AssessmentHistoryV2"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a8113a6-8c6d-4df5-8dcc-6671dc35b8d7",
+              "name": "Assessments",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "AssessmentHistoryV2"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.dome9.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b82bd51a-b503-498e-bd1b-c8cc7617fb26",
+    "name": "Check Point CloudGuard Access Rules Compliance API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.\n\nContact Support:\n Name: Check Point CloudGuard Support",
+      "type": "text/plain"
+    }
+  }
+}

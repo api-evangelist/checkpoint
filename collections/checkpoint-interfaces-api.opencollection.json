@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Check Point CloudGuard Access Rules Interfaces API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Interfaces",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Show network interfaces",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.dome9.com/v2/show-interfaces"
+          },
+          "docs": "Show network interfaces"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
