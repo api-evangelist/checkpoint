@@ -160,6 +160,8 @@ apis:
   humanURL: https://sc1.checkpoint.com/documents/latest/APIs/
   baseURL: https://management.example.com/web_api
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
