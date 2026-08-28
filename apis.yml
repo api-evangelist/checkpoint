@@ -6,6 +6,18 @@ description: >-
   APIs for security automation, including the Smart-1 Management API, Gaia OS API, CloudGuard cloud security posture
   API, Identity Awareness API, Spark and Zero Touch device management APIs, Harmony Email and Collaboration API, Threat
   Hunting (TH) API, and CloudGuard WAF API.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
