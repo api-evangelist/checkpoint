@@ -1,16 +1,16 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Check Point CloudGuard Access Rules Events API
-  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
+  title: Check Point Harmony Email Events API
+  description: REST API for Check Point Harmony Email and Collaboration (formerly Avanan). Surfaces email security events, quarantined items, and administrative actions.
   version: '1.0'
   contact:
-    name: Check Point CloudGuard Support
-    url: https://docs.cgn.portal.checkpoint.com/
+    name: Check Point Harmony Support
+    url: https://www.checkpoint.com/harmony/email-security/
 servers:
-- url: https://api.dome9.com/v2
-  description: CloudGuard Production
+- url: https://smart-api.avanan.net/v2.0
+  description: Harmony Email Production
 security:
-- basicAuth: []
+- bearerAuth: []
 tags:
 - name: Events
 paths:
@@ -36,6 +36,9 @@ paths:
           description: Events list
 components:
   securitySchemes:
-    basicAuth:
+    bearerAuth:
       type: http
-      scheme: basic
+      scheme: bearer
+externalDocs:
+  description: Harmony Email API Reference
+  url: https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm

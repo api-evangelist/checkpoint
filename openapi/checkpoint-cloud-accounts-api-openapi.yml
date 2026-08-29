@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Check Point CloudGuard Access Rules Cloud Accounts API
+  title: Check Point CloudGuard Cloud Accounts API
   description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
   version: '1.0'
   contact:

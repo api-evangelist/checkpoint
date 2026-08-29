@@ -1,16 +1,19 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Check Point CloudGuard Access Rules API
-  description: REST API for Check Point CloudGuard Native cloud security posture management. Manages cloud accounts, assets, security policies, and risk findings across AWS, Azure, and GCP environments.
-  version: '1.0'
+  title: Check Point Management Access Rules API
+  description: REST API for the Check Point Smart-1 Security Management Server. Allows automation of policy and object management including network and host objects, services, security policies, access rules, NAT rules, and publish/install operations.
+  version: '2.0'
   contact:
-    name: Check Point CloudGuard Support
-    url: https://docs.cgn.portal.checkpoint.com/
+    name: Check Point Support
+    url: https://www.checkpoint.com/support-services/
 servers:
-- url: https://api.dome9.com/v2
-  description: CloudGuard Production
+- url: https://{server}/web_api
+  description: Smart-1 Management Server
+  variables:
+    server:
+      default: management.example.com
 security:
-- basicAuth: []
+- sidToken: []
 tags:
 - name: Access Rules
 paths:
@@ -82,6 +85,11 @@ paths:
           description: Access rule created
 components:
   securitySchemes:
-    basicAuth:
-      type: http
-      scheme: basic
+    sidToken:
+      type: apiKey
+      in: header
+      name: X-chkp-sid
+      description: Session ID issued by /login.
+externalDocs:
+  description: Check Point Management API Reference
+  url: https://sc1.checkpoint.com/documents/latest/APIs/
