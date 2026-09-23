@@ -36,7 +36,8 @@
     "checkpoint-harmony-email-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "checkpoint-identity-awareness-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "checkpoint-management-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "tag 'Login' spans 2 source specs (checkpoint-gaia-api-openapi.yml, checkpoint-management-api-openapi.yml): per-path servers applied"
+    "tag 'Login' spans 2 source specs (checkpoint-gaia-api-openapi.yml, checkpoint-management-api-openapi.yml): per-path servers applied",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "checkpoint-access-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
