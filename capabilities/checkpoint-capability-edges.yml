@@ -1,0 +1,76 @@
+slug: checkpoint
+provider: Check Point
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 6
+edges:
+- tag: Identity
+  spec_file: checkpoint-identity-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.82
+  evidence: 'POST /idasdk/add-identity  "Associate a user identity with an IP"; description: "posting
+    and querying user-to-IP identity associations ... for use in identity-aware policy enforcement"'
+  reason: Operations create and delete user identity associations used to drive access enforcement, which
+    is squarely Identity & Access Management within cybersecurity.
+- tag: Events
+  spec_file: checkpoint-events-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.78
+  evidence: 'GET /events listEvents ''List Harmony Email security events''; description: ''Surfaces email
+    security events, quarantined items, and administrative actions'''
+  reason: Surfacing email security detection events and quarantine items is threat detection and response
+    telemetry, not generic application eventing.
+- tag: Access Rules
+  spec_file: checkpoint-access-rules-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.75
+  evidence: 'POST /add-access-rule ''Add an access rule''; description: ''automation of policy and object
+    management including ... security policies, access rules, NAT rules'''
+  reason: Firewall security policy rulebase management on a security management server — clearly Cybersecurity
+    Management. No single L2 fits cleanly (it is neither IAM in the joiner-mover-leaver sense nor vulnerability
+    management), so L1 only.
+- tag: Findings
+  spec_file: checkpoint-findings-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.75
+  evidence: 'GET /Compliance/Finding listFindings ''List compliance findings''; description: ''Manages
+    cloud accounts, assets, security policies, and risk findings'''
+  reason: Cloud security posture risk findings sit squarely in Cybersecurity Management; ambiguous between
+    vulnerability management and security governance sub-capabilities, so L1 only.
+- tag: Quarantine
+  spec_file: checkpoint-quarantine-api-openapi.yml
+  capability_id: BC-620.30
+  capability_id_l1: BC-620
+  capability_name: Threat Detection & Response Management
+  confidence: 0.74
+  evidence: GET /quarantine  listQuarantine  List quarantined items — "Surfaces email security events,
+    quarantined items, and administrative actions"
+  reason: Email quarantine listing is the detection-and-response handling of malicious messages, fitting
+    Threat Detection & Response Management.
+- tag: Rulesets
+  spec_file: checkpoint-rulesets-api-openapi.yml
+  capability_id: BC-620
+  capability_id_l1: BC-620
+  capability_name: Cybersecurity Management
+  confidence: 0.72
+  evidence: GET /Ruleset/view  listRulesets  List rulesets used for posture management — "CloudGuard Native
+    cloud security posture management ... security policies, and risk findings"
+  reason: Cloud security posture rulesets are security policy/compliance control definitions, clearly
+    cybersecurity; ambiguous between governance and architecture L2s so L1 only.
