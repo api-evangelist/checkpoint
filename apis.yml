@@ -468,6 +468,12 @@ apis:
     url: >-
       https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm
 common:
+  - type: Plans
+    url: plans/checkpoint-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/checkpoint-rate-limits.yml
+  - type: FinOps
+    url: finops/checkpoint-finops.yml
   - type: CapabilityMap
     url: capabilities/checkpoint-capability-edges.yml
     name: Check Point Business Capability Map
