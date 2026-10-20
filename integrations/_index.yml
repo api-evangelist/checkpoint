@@ -177,3 +177,36 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: checkpoint-peeringdb-interconnection-register
+  label: PeeringDB (interconnection register)
+  partner_name: PeeringDB (interconnection register)
+  category: network interconnection register
+  type: register
+  channel: standard-directory
+  evidence: https://www.peeringdb.com/net/34940
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: PeeringDB (peeringdb.com/api net, ix, fac, org)
+    standard: null
+    spec_file: null
+    role: peeringdb-network
+    registered_name: Perimeter 81
+    register_id: https://www.peeringdb.com/net/34940
+    matched_domain: checkpoint.com
+    matched_by: domain+name-among-holders
+    asns:
+    - 153913
+    - 213176
+    - 398391
+    info_types:
+    - Network Services
+    ix_presence: 0
+    exchanges_operated: []
+    facilities_operated: 0
+    signal_note: 'participation only: PeeringDB is self-registered by network operators; ASNs, IX presence and facility
+      counts are context, never counted'
+    detected_by: sweep-network-edge.py
+    detected: '2026-10-20'
+  status: not-a-workflow
+  arazzo: null
