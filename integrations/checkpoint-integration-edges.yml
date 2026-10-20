@@ -13,6 +13,8 @@ checked:
 - https://www.applytosupply.digitalmarketplace.service.gov.uk/g-cloud-15/suppliers
 - microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
 - palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+- jamf/integrations/jamf-integration-edges.yml
+- microsoft-intune/integrations/microsoft-intune-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: GitHub Marketplace (actions)
@@ -190,5 +192,38 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-compliance-assurance.py
   first_seen: '2026-10-20'
+- partner_name: JAMF (own)
+  partner: jamf
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.jamf.com/details/check-point-sandblast-mobile
+  mirror_of: jamf/integrations/jamf-integration-edges.yml
+  apps:
+  - Check Point SandBlast Mobile
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Integration
+- partner_name: Microsoft Intune (partner connector docs)
+  partner: microsoft-intune
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: docs
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  evidence: https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/setup-checkpoint-harmony
+  mirror_of: microsoft-intune/integrations/microsoft-intune-integration-edges.yml
+  apps:
+  - Integrate Check Point Harmony Mobile with Intune
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Intune Mobile Threat Defense connector
 source:
 - https://github.com/marketplace?type=actions
