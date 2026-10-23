@@ -172,109 +172,6 @@
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   status: not-a-workflow
   arazzo: null
-- slug: checkpoint-microsoft-sentinel-own
-  label: Microsoft Sentinel (own)
-  partner: microsoft-sentinel
-  partner_name: Microsoft Sentinel (own)
-  category: Security - Automation (SOAR)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Check%20Point
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-palo-alto-networks-own
-  label: Palo Alto Networks (own)
-  partner: palo-alto-networks
-  partner_name: Palo Alto Networks (own)
-  category: Email
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://cortex.marketplace.pan.dev/marketplace/details/CheckPointHEC/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-google-workspace-own
-  label: Google Workspace (own)
-  partner: google-workspace
-  partner_name: Google Workspace (own)
-  category: Google Workspace app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://workspace.google.com/marketplace/app/avanan_security/445730079397
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-jamf-own
-  label: JAMF (own)
-  partner: jamf
-  partner_name: JAMF (own)
-  category: Integration
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.jamf.com/details/check-point-sandblast-mobile
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-microsoft-intune-partner-connector-docs
-  label: Microsoft Intune (partner connector docs)
-  partner: microsoft-intune
-  partner_name: Microsoft Intune (partner connector docs)
-  category: Intune Mobile Threat Defense connector
-  type: docs
-  channel: partner-built
-  evidence: https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/setup-checkpoint-harmony
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-opentofu-opentofu-registry
-  label: OpenTofu (opentofu-registry)
-  partner: opentofu
-  partner_name: OpenTofu (opentofu-registry)
-  category: infrastructure-as-code provider registry listing
-  type: marketplace
-  marketplace: opentofu-registry
-  channel: partner-built
-  evidence: https://search.opentofu.org/provider/checkpointsw/checkpoint
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-pulumi-pulumi-registry
-  label: Pulumi (pulumi-registry)
-  partner: pulumi
-  partner_name: Pulumi (pulumi-registry)
-  category: infrastructure-as-code provider registry listing
-  type: marketplace
-  marketplace: pulumi-registry
-  channel: partner-built
-  evidence: https://www.pulumi.com/registry/packages/checkpoint/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: checkpoint-terraform-terraform-registry
-  label: Terraform (terraform-registry)
-  partner: terraform
-  partner_name: Terraform (terraform-registry)
-  category: infrastructure-as-code provider registry listing
-  type: marketplace
-  marketplace: terraform-registry
-  channel: partner-built
-  evidence: https://registry.terraform.io/providers/CheckPointSW/checkpoint
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: checkpoint-common-criteria-portal-ccra-certified-products
   label: Common Criteria Portal (CCRA certified products)
   partner_name: Common Criteria Portal (CCRA certified products)
@@ -550,5 +447,121 @@
     identity_source: register website (CMVP certificate Vendor panel)
     other_registrations:
     - Check Point Software Technologies
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-microsoft-sentinel-own
+  label: Microsoft Sentinel (own)
+  partner: microsoft-sentinel
+  partner_name: Microsoft Sentinel (own)
+  category: Security - Automation (SOAR)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Check%20Point
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-palo-alto-networks-own
+  label: Palo Alto Networks (own)
+  partner: palo-alto-networks
+  partner_name: Palo Alto Networks (own)
+  category: Email
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cortex.marketplace.pan.dev/marketplace/details/CheckPointHEC/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-google-workspace-own
+  label: Google Workspace (own)
+  partner: google-workspace
+  partner_name: Google Workspace (own)
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/avanan_security/445730079397
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-jamf-own
+  label: JAMF (own)
+  partner: jamf
+  partner_name: JAMF (own)
+  category: Integration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.jamf.com/details/check-point-sandblast-mobile
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-microsoft-intune-partner-connector-docs
+  label: Microsoft Intune (partner connector docs)
+  partner: microsoft-intune
+  partner_name: Microsoft Intune (partner connector docs)
+  category: Intune Mobile Threat Defense connector
+  type: docs
+  channel: partner-built
+  evidence: https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/setup-checkpoint-harmony
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-opentofu-opentofu-registry
+  label: OpenTofu (opentofu-registry)
+  partner: opentofu
+  partner_name: OpenTofu (opentofu-registry)
+  category: infrastructure-as-code provider registry listing
+  type: marketplace
+  marketplace: opentofu-registry
+  channel: partner-built
+  evidence: https://search.opentofu.org/provider/checkpointsw/checkpoint
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-pulumi-pulumi-registry
+  label: Pulumi (pulumi-registry)
+  partner: pulumi
+  partner_name: Pulumi (pulumi-registry)
+  category: infrastructure-as-code provider registry listing
+  type: marketplace
+  marketplace: pulumi-registry
+  channel: partner-built
+  evidence: https://www.pulumi.com/registry/packages/checkpoint/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-terraform-terraform-registry
+  label: Terraform (terraform-registry)
+  partner: terraform
+  partner_name: Terraform (terraform-registry)
+  category: infrastructure-as-code provider registry listing
+  type: marketplace
+  marketplace: terraform-registry
+  channel: partner-built
+  evidence: https://registry.terraform.io/providers/CheckPointSW/checkpoint
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: checkpoint-ansible-ansible-galaxy
+  label: Ansible (ansible-galaxy)
+  partner: ansible
+  partner_name: Ansible (ansible-galaxy)
+  category: configuration-management content listing (Ansible collection)
+  type: marketplace
+  marketplace: ansible-galaxy
+  channel: partner-built
+  evidence: https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null

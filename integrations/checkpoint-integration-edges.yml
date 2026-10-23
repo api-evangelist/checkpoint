@@ -34,6 +34,7 @@ checked:
 - https://csrc.nist.gov/projects/cryptographic-module-validation-program/modules-in-process/modules-in-process-list
 - https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules/search/all
 - https://csrc.nist.gov/projects/cryptographic-module-validation-program/validated-modules/search?SearchMode=Advanced&Standard=140-2&CertificateStatus=Historical&ValidationYear=0
+- ansible/integrations/ansible-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: GitHub Marketplace (actions)
@@ -209,161 +210,6 @@ edges:
     identity_source: wikidata P856 (labelled provenance step; Kin 2026-10-15 decision 1)
   detected_by: sweep-cloud-security-star.py
   first_seen: '2026-10-20'
-- partner_name: Microsoft Sentinel (own)
-  partner: microsoft-sentinel
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Check%20Point
-  mirror_of: microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
-  apps:
-  - Check Point
-  - Check Point CloudGuard CNAPP
-  - Check Point Cyberint Alerts
-  - Check Point Cyberint IOC
-  - Check Point EM ThreatCloud Intelligence Feed
-  listing_count: 5
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Security - Automation (SOAR)
-  badges:
-  - support-tier:partner
-- partner_name: Palo Alto Networks (own)
-  partner: palo-alto-networks
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://cortex.marketplace.pan.dev/marketplace/details/CheckPointHEC/
-  mirror_of: palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
-  apps:
-  - Check Point Harmony Email and Collaboration (HEC)
-  - Check Point Infinity NDR
-  - Check Point XDR
-  listing_count: 3
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Email
-  badges:
-  - support:partner
-- partner_name: Google Workspace (own)
-  partner: google-workspace
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://workspace.google.com/marketplace/app/avanan_security/445730079397
-  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
-  apps:
-  - Avanan Security
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Google Workspace app
-- partner_name: JAMF (own)
-  partner: jamf
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.jamf.com/details/check-point-sandblast-mobile
-  mirror_of: jamf/integrations/jamf-integration-edges.yml
-  apps:
-  - Check Point SandBlast Mobile
-  listing_count: 1
-  detected: '2026-10-20'
-  detected_by: mirror-platform-listings.py
-  category: Integration
-- partner_name: Microsoft Intune (partner connector docs)
-  partner: microsoft-intune
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: docs
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  evidence: https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/setup-checkpoint-harmony
-  mirror_of: microsoft-intune/integrations/microsoft-intune-integration-edges.yml
-  apps:
-  - Integrate Check Point Harmony Mobile with Intune
-  listing_count: 1
-  detected: '2026-10-20'
-  detected_by: mirror-platform-listings.py
-  category: Intune Mobile Threat Defense connector
-- partner_name: OpenTofu (opentofu-registry)
-  partner: opentofu
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: opentofu-registry
-  evidence: https://search.opentofu.org/provider/checkpointsw/checkpoint
-  mirror_of: opentofu/integrations/opentofu-integration-edges.yml
-  apps:
-  - checkpointsw/checkpoint
-  listing_count: 1
-  detected: '2026-10-21'
-  detected_by: mirror-platform-listings.py
-  category: infrastructure-as-code provider registry listing
-  badges:
-  - Verified publisher (GitHub domain-verified organization)
-- partner_name: Pulumi (pulumi-registry)
-  partner: pulumi
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: pulumi-registry
-  evidence: https://www.pulumi.com/registry/packages/checkpoint/
-  mirror_of: pulumi/integrations/pulumi-integration-edges.yml
-  apps:
-  - checkpoint
-  listing_count: 1
-  detected: '2026-10-21'
-  detected_by: mirror-platform-listings.py
-  category: infrastructure-as-code provider registry listing
-  badges:
-  - Verified publisher (GitHub domain-verified organization)
-- partner_name: Terraform (terraform-registry)
-  partner: terraform
-  partner_match: mirror
-  mirror_match: domain+name-among-holders
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: terraform-registry
-  evidence: https://registry.terraform.io/providers/CheckPointSW/checkpoint
-  mirror_of: terraform/integrations/terraform-integration-edges.yml
-  apps:
-  - CheckPointSW/checkpoint
-  - CheckPointSW/infinity-next
-  - CheckPointSW/checkpoint-workforce-ai
-  - CheckPointSW/checkpointsase
-  listing_count: 1
-  detected: '2026-10-21'
-  detected_by: mirror-platform-listings.py
-  category: infrastructure-as-code provider registry listing
-  badges:
-  - Verified publisher (Terraform partner tier)
-  - Verified publisher (GitHub domain-verified organization)
 - partner_name: Common Criteria Portal (CCRA certified products)
   partner: null
   partner_match: register
@@ -641,5 +487,180 @@ edges:
     - Check Point Software Technologies
   detected_by: sweep-nist-cmvp-fips-140-modules.py
   first_seen: '2026-10-22'
+- partner_name: Microsoft Sentinel (own)
+  partner: microsoft-sentinel
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Check%20Point
+  mirror_of: microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
+  apps:
+  - Check Point
+  - Check Point CloudGuard CNAPP
+  - Check Point Cyberint Alerts
+  - Check Point Cyberint IOC
+  - Check Point EM ThreatCloud Intelligence Feed
+  listing_count: 5
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Security - Automation (SOAR)
+  badges:
+  - support-tier:partner
+- partner_name: Palo Alto Networks (own)
+  partner: palo-alto-networks
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://cortex.marketplace.pan.dev/marketplace/details/CheckPointHEC/
+  mirror_of: palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+  apps:
+  - Check Point Harmony Email and Collaboration (HEC)
+  - Check Point Infinity NDR
+  - Check Point XDR
+  listing_count: 3
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Email
+  badges:
+  - support:partner
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/avanan_security/445730079397
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Avanan Security
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
+- partner_name: JAMF (own)
+  partner: jamf
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.jamf.com/details/check-point-sandblast-mobile
+  mirror_of: jamf/integrations/jamf-integration-edges.yml
+  apps:
+  - Check Point SandBlast Mobile
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Integration
+- partner_name: Microsoft Intune (partner connector docs)
+  partner: microsoft-intune
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: docs
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  evidence: https://learn.microsoft.com/en-us/intune/device-security/mobile-threat-defense/setup-checkpoint-harmony
+  mirror_of: microsoft-intune/integrations/microsoft-intune-integration-edges.yml
+  apps:
+  - Integrate Check Point Harmony Mobile with Intune
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: Intune Mobile Threat Defense connector
+- partner_name: OpenTofu (opentofu-registry)
+  partner: opentofu
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: opentofu-registry
+  evidence: https://search.opentofu.org/provider/checkpointsw/checkpoint
+  mirror_of: opentofu/integrations/opentofu-integration-edges.yml
+  apps:
+  - checkpointsw/checkpoint
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Pulumi (pulumi-registry)
+  partner: pulumi
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: pulumi-registry
+  evidence: https://www.pulumi.com/registry/packages/checkpoint/
+  mirror_of: pulumi/integrations/pulumi-integration-edges.yml
+  apps:
+  - checkpoint
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Terraform (terraform-registry)
+  partner: terraform
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: terraform-registry
+  evidence: https://registry.terraform.io/providers/CheckPointSW/checkpoint
+  mirror_of: terraform/integrations/terraform-integration-edges.yml
+  apps:
+  - CheckPointSW/checkpoint
+  - CheckPointSW/infinity-next
+  - CheckPointSW/checkpoint-workforce-ai
+  - CheckPointSW/checkpointsase
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
+  badges:
+  - Verified publisher (Terraform partner tier)
+  - Verified publisher (GitHub domain-verified organization)
+- partner_name: Ansible (ansible-galaxy)
+  partner: ansible
+  partner_match: mirror
+  mirror_match: domain+name-among-holders
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: ansible-galaxy
+  evidence: https://galaxy.ansible.com/ui/repo/published/check_point/mgmt/
+  mirror_of: ansible/integrations/ansible-integration-edges.yml
+  apps:
+  - check_point.mgmt
+  - check_point.gaia
+  listing_count: 1
+  detected: '2026-10-22'
+  detected_by: mirror-platform-listings.py
+  category: configuration-management content listing (Ansible collection)
+  badges:
+  - Verified publisher (GitHub domain-verified organization)
 source:
 - https://github.com/marketplace?type=actions
