@@ -1,4 +1,4 @@
-# Check Point (checkpoint)
+# Check Point
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,249 +66,189 @@
 
 Check Point Software Technologies is a global cybersecurity vendor providing network, cloud, endpoint, mobile, and email security through its Quantum, CloudGuard, and Harmony product families. Check Point exposes a wide range of REST APIs for security automation, including the Smart-1 Management API, Gaia OS API, CloudGuard cloud security posture API, Identity Awareness API, Spark and Zero Touch device management APIs, Harmony Email and Collaboration API, Threat Hunting (TH) API, and CloudGuard WAF API.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/checkpoint/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/checkpoint/refs/heads/main/apis.yml)
+**Areas:** Cloud Security · Cybersecurity · Endpoint Security · Firewall · Identity Awareness · Mobile Security · Network Security · Security · Threat Prevention · WAF
 
-## Scope
+## Check Point on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Check Point is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/checkpoint/](https://apis.io/providers/checkpoint/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (21)
 
-- Cloud Security
-- Cybersecurity
-- Endpoint Security
-- Firewall
-- Identity Awareness
-- Mobile Security
-- Network Security
-- Security
-- Threat Prevention
-- WAF
+- [Check Point Spark Management API](https://apis.io/apis/checkpoint/spark-management-api/) — REST API for centrally managing Check Point Quantum Spark SMB appliances including configuration and policy.
+- [Check Point Zero Touch API](https://apis.io/apis/checkpoint/zero-touch-api/) — REST API for the Zero Touch deployment service that streamlines bring-up of new Check Point appliances.
+- [Check Point Threat Hunting API](https://apis.io/apis/checkpoint/th-api/) — REST API for the Check Point Threat Hunting (TH) platform exposing threat intelligence, indicators, and hunting queries.
+- [Check Point CloudGuard WAF API](https://apis.io/apis/checkpoint/cloudguard-waf-api/) — Management API for the CloudGuard WAF cloud-native web application and API protection product.
+- [Check Point Access Rules API](https://apis.io/apis/checkpoint/checkpoint-access-rules-api/) — The Access Rules API from Check Point — 2 operation(s) for access rules.
+- [Check Point Cloud Accounts API](https://apis.io/apis/checkpoint/checkpoint-cloud-accounts-api/) — The Cloud Accounts API from Check Point — 1 operation(s) for cloud accounts.
+- [Check Point Compliance API](https://apis.io/apis/checkpoint/checkpoint-compliance-api/) — The Compliance API from Check Point — 1 operation(s) for compliance.
+- [Check Point Events API](https://apis.io/apis/checkpoint/checkpoint-events-api/) — The Events API from Check Point — 1 operation(s) for events.
+- [Check Point Findings API](https://apis.io/apis/checkpoint/checkpoint-findings-api/) — The Findings API from Check Point — 1 operation(s) for findings.
+- [Check Point Hosts API](https://apis.io/apis/checkpoint/checkpoint-hosts-api/) — The Hosts API from Check Point — 2 operation(s) for hosts.
+- [Check Point Identity API](https://apis.io/apis/checkpoint/checkpoint-identity-api/) — The Identity API from Check Point — 2 operation(s) for identity.
+- [Check Point Interfaces API](https://apis.io/apis/checkpoint/checkpoint-interfaces-api/) — The Interfaces API from Check Point — 1 operation(s) for interfaces.
+- [Check Point Login API](https://apis.io/apis/checkpoint/checkpoint-login-api/) — The Login API from Check Point — 2 operation(s) for login.
+- [Check Point NAT Rules API](https://apis.io/apis/checkpoint/checkpoint-nat-rules-api/) — The NAT Rules API from Check Point — 1 operation(s) for nat rules.
+- [Check Point Networks API](https://apis.io/apis/checkpoint/checkpoint-networks-api/) — The Networks API from Check Point — 1 operation(s) for networks.
+- [Check Point Quarantine API](https://apis.io/apis/checkpoint/checkpoint-quarantine-api/) — The Quarantine API from Check Point — 1 operation(s) for quarantine.
+- [Check Point Routes API](https://apis.io/apis/checkpoint/checkpoint-routes-api/) — The Routes API from Check Point — 1 operation(s) for routes.
+- [Check Point Rulesets API](https://apis.io/apis/checkpoint/checkpoint-rulesets-api/) — The Rulesets API from Check Point — 1 operation(s) for rulesets.
+- [Check Point Services API](https://apis.io/apis/checkpoint/checkpoint-services-api/) — The Services API from Check Point — 1 operation(s) for services.
+- [Check Point Sessions API](https://apis.io/apis/checkpoint/checkpoint-sessions-api/) — The Sessions API from Check Point — 2 operation(s) for sessions.
+- [Check Point System API](https://apis.io/apis/checkpoint/checkpoint-system-api/) — The System API from Check Point — 1 operation(s) for system.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Check Point Management API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST API for the Smart-1 Security Management Server. Automates policy and object management including host/network/service objects, access and NAT rulebases, and publish/install operations.
+- [Checkpoint Agentic Access](https://apis.io/agentic-access/checkpoint/checkpoint-agentic-access/)
 
-- **Human URL:** [https://sc1.checkpoint.com/documents/latest/APIs/](https://sc1.checkpoint.com/documents/latest/APIs/)
-- **Base URL:** `https://management.example.com/web_api`
+#### JSON Schema (2)
 
-#### Tags
+The data models the API reads and writes.
 
-- Firewall
-- Management
-- Network Security
+- [Check Point Access Rule](https://apis.io/schemas/checkpoint/checkpoint-access-rule/)
+- [Check Point Host Object](https://apis.io/schemas/checkpoint/checkpoint-host/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://sc1.checkpoint.com/documents/latest/APIs/)
-- [OpenAPI](openapi/checkpoint-management-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/checkpoint-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### Check Point Gaia API
+- [Checkpoint Structure](https://apis.io/json-structure/checkpoint/checkpoint-structure/)
 
-REST API for the Check Point Gaia operating system. Manages gateway interfaces, routing, system info, and configuration.
+#### JSON-LD (1)
 
-- **Human URL:** [https://sc1.checkpoint.com/documents/latest/GaiaAPIs/](https://sc1.checkpoint.com/documents/latest/GaiaAPIs/)
-- **Base URL:** `https://gateway.example.com/gaia_api`
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Checkpoint Context](https://apis.io/jsonld/checkpoint/checkpoint-context/)
 
-- Gaia
-- Operating System
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://sc1.checkpoint.com/documents/latest/GaiaAPIs/)
-- [OpenAPI](openapi/checkpoint-gaia-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/checkpoint-gaia-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-gaia-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Check Point Domain Vocabulary](https://apis.io/vocabularies/checkpoint/checkpoint-vocabulary/)
 
-### Check Point CloudGuard API
+#### Collections (22)
 
-REST API for CloudGuard Native cloud security posture management, cloud account onboarding, compliance findings, and rulesets across AWS, Azure, and GCP.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://docs.cgn.portal.checkpoint.com/reference/introduction](https://docs.cgn.portal.checkpoint.com/reference/introduction)
-- **Base URL:** `https://api.dome9.com/v2`
+- [Check Point CloudGuard Access Rules API](https://apis.io/collections/checkpoint/open-checkpoint-access-rules-api/)
+- [Check Point CloudGuard Access Rules Cloud Accounts API](https://apis.io/collections/checkpoint/open-checkpoint-cloud-accounts-api/)
+- [Check Point CloudGuard API](https://apis.io/collections/checkpoint/open-checkpoint-cloudguard-api/)
+- [Check Point CloudGuard Access Rules Compliance API](https://apis.io/collections/checkpoint/open-checkpoint-compliance-api/)
+- [Check Point CloudGuard Access Rules Events API](https://apis.io/collections/checkpoint/open-checkpoint-events-api/)
+- [Check Point CloudGuard Access Rules Findings API](https://apis.io/collections/checkpoint/open-checkpoint-findings-api/)
+- [Check Point Gaia API](https://apis.io/collections/checkpoint/open-checkpoint-gaia-api/)
+- [Check Point Harmony Email API](https://apis.io/collections/checkpoint/open-checkpoint-harmony-email-api/)
+- [Check Point CloudGuard Access Rules Hosts API](https://apis.io/collections/checkpoint/open-checkpoint-hosts-api/)
+- [Check Point CloudGuard Access Rules Identity API](https://apis.io/collections/checkpoint/open-checkpoint-identity-api/)
+- [Check Point Identity Awareness API](https://apis.io/collections/checkpoint/open-checkpoint-identity-awareness-api/)
+- [Check Point CloudGuard Access Rules Interfaces API](https://apis.io/collections/checkpoint/open-checkpoint-interfaces-api/)
+- [Check Point CloudGuard Access Rules Login API](https://apis.io/collections/checkpoint/open-checkpoint-login-api/)
+- [Check Point Management API](https://apis.io/collections/checkpoint/open-checkpoint-management-api/)
+- [Check Point CloudGuard Access Rules NAT Rules API](https://apis.io/collections/checkpoint/open-checkpoint-nat-rules-api/)
+- [Check Point CloudGuard Access Rules Networks API](https://apis.io/collections/checkpoint/open-checkpoint-networks-api/)
+- [Check Point CloudGuard Access Rules Quarantine API](https://apis.io/collections/checkpoint/open-checkpoint-quarantine-api/)
+- [Check Point CloudGuard Access Rules Routes API](https://apis.io/collections/checkpoint/open-checkpoint-routes-api/)
+- [Check Point CloudGuard Access Rules Rulesets API](https://apis.io/collections/checkpoint/open-checkpoint-rulesets-api/)
+- [Check Point CloudGuard Access Rules Services API](https://apis.io/collections/checkpoint/open-checkpoint-services-api/)
+- [Check Point CloudGuard Access Rules Sessions API](https://apis.io/collections/checkpoint/open-checkpoint-sessions-api/)
+- [Check Point CloudGuard Access Rules System API](https://apis.io/collections/checkpoint/open-checkpoint-system-api/)
 
-#### Tags
+#### Governance rules (1)
 
-- Cloud Security
-- Compliance
-- Posture Management
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [Check Point — jsonschema rules](https://apis.io/rules/checkpoint/checkpoint-jsonschema-spectral-rules/)
 
-- [Documentation](https://docs.cgn.portal.checkpoint.com/)
-- [OpenAPI](openapi/checkpoint-cloudguard-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/checkpoint-cloudguard-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-cloudguard-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (2)
 
-### Check Point Identity Awareness API
+Authentication, trust centre, and vulnerability disclosure.
 
-REST API for posting and revoking user-to-IP identity associations on Check Point gateways, enabling identity-aware policy enforcement.
+- [Checkpoint Authentication](https://apis.io/security/checkpoint/checkpoint-authentication/)
+- [Checkpoint Domain Security](https://apis.io/security/checkpoint/checkpoint-domain-security/)
 
-- **Human URL:** [https://sc1.checkpoint.com/documents/latest/IdentityAPIs/](https://sc1.checkpoint.com/documents/latest/IdentityAPIs/)
-- **Base URL:** `https://gateway.example.com/_IA_MU_Agent`
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Identity
-- Network Security
+- [Checkpoint Plans Pricing](https://apis.io/plans/checkpoint/checkpoint-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://sc1.checkpoint.com/documents/latest/IdentityAPIs/)
-- [OpenAPI](openapi/checkpoint-identity-awareness-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/checkpoint-identity-awareness-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-identity-awareness-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### Check Point Spark Management API
+- [Checkpoint Rate Limits](https://apis.io/rate-limits/checkpoint/checkpoint-rate-limits/)
 
-REST API for centrally managing Check Point Quantum Spark SMB appliances including configuration and policy.
+#### FinOps (1)
 
-- **Human URL:** [https://sc1.checkpoint.com/documents/latest/SmpAPIs/](https://sc1.checkpoint.com/documents/latest/SmpAPIs/)
+What the API costs to run, by operation.
 
-#### Tags
+- [Checkpoint Finops](https://apis.io/finops/checkpoint/checkpoint-finops/)
 
-- SMB
-- Spark
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://sc1.checkpoint.com/documents/latest/SmpAPIs/)
-- [Postman Collection](collections/checkpoint-cloudguard-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-cloudguard-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-gaia-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-gaia-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-harmony-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-harmony-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-identity-awareness-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-identity-awareness-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Check Point Zero Touch API
-
-REST API for the Zero Touch deployment service that streamlines bring-up of new Check Point appliances.
-
-- **Human URL:** [https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm](https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm)
-
-#### Tags
-
-- Deployment
-- Zero Touch
-
-#### Properties
-
-- [Documentation](https://sc1.checkpoint.com/documents/Appliances/Zero_Touch_REST_API_Guide/EN/Content/Topics-API/Overview.htm)
-- [Postman Collection](collections/checkpoint-cloudguard-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-cloudguard-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-gaia-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-gaia-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-harmony-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-harmony-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-identity-awareness-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-identity-awareness-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Check Point Harmony Email API
-
-REST API for Harmony Email and Collaboration (formerly Avanan) surfacing email security events, quarantined items, and admin actions.
-
-- **Human URL:** [https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm](https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm)
-- **Base URL:** `https://smart-api.avanan.net/v2.0`
-
-#### Tags
-
-- Email Security
-- Harmony
-
-#### Properties
-
-- [Documentation](https://sc1.checkpoint.com/documents/Harmony_Email_and_Collaboration_API_Reference/Topics-HEC-Avanan-API-Reference-Guide/Overview/API-Overview.htm)
-- [OpenAPI](openapi/checkpoint-harmony-email-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/checkpoint-harmony-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-harmony-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Check Point Threat Hunting API
-
-REST API for the Check Point Threat Hunting (TH) platform exposing threat intelligence, indicators, and hunting queries.
-
-- **Human URL:** [https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html](https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html)
-
-#### Tags
-
-- Threat Hunting
-- Threat Intelligence
-
-#### Properties
-
-- [Documentation](https://sc1.checkpoint.com/documents/latest/ThAPIs/index.html)
-- [Postman Collection](collections/checkpoint-cloudguard-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-cloudguard-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-gaia-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-gaia-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-harmony-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-harmony-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-identity-awareness-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-identity-awareness-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Check Point CloudGuard WAF API
-
-Management API for the CloudGuard WAF cloud-native web application and API protection product.
-
-- **Human URL:** [https://waf-doc.inext.checkpoint.com/references/management-api](https://waf-doc.inext.checkpoint.com/references/management-api)
-
-#### Tags
-
-- WAF
-- Web Security
-
-#### Properties
-
-- [Documentation](https://waf-doc.inext.checkpoint.com/)
-- [Postman Collection](collections/checkpoint-cloudguard-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-cloudguard-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-gaia-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-gaia-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-harmony-email-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-harmony-email-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-identity-awareness-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-identity-awareness-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Postman Collection](collections/checkpoint-management-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/checkpoint-management-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [LinkedIn](https://www.linkedin.com/company/check-point-software-technologies)
 - [Website](https://www.checkpoint.com/)
 - [Documentation](https://sc1.checkpoint.com/documents/)
 - [Support](https://www.checkpoint.com/support-services/)
-- [Login](https://portal.checkpoint.com/)
 - [Blog](https://blog.checkpoint.com/)
-- [Git Hub](https://github.com/CheckPointSW)
-- [Terms of Service](https://www.checkpoint.com/about-us/terms-of-use/)
-- [Privacy Policy](https://www.checkpoint.com/about-us/privacy-statement/)
-- [JSON-LD](json-ld/checkpoint-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON Schema](json-schema/checkpoint-host-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/checkpoint-access-rule-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [Spectral Rules](spectral/checkpoint-spectral.yml) — [Spectral](https://docs.stoplight.io/docs/spectral)
-- [L L Ms Txt](https://docs.cgn.portal.checkpoint.com/llms.txt)
+- [Terms of service](https://www.checkpoint.com/about-us/terms-of-use/)
+- [Privacy policy](https://www.checkpoint.com/about-us/privacy-statement/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 34.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 69.6 |
+| Contract quality | 47.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 32.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/checkpoint/](https://apis.io/providers/checkpoint/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Check Point: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/checkpoint/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
